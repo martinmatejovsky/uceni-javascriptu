@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <title>Učení javascriptu</title>
-<!-- -->
-        <script src="firstEnter.js"></script> 
+        <!-- <script src="firstEnter.js"></script> -->
         <script>
             // sem možno psát scripty
             console.log('akce z head');
@@ -19,15 +18,29 @@
        <section class="header">
             <h1 class="header__heading">Děkuji za návštěvu stránek</h1>
             
-            <h2 class="header__heading1">produkty</h2>
-            <h2 class="header__heading1">kované</h2>
-            <h2 class="header__heading1">lisované</h2>
-            <h2 class="header__heading1">barvené</h2>
-            <script>
-                // sem možno psát scripty
+            <h2>Kované</h2>
+            <div id="counterForged" class="productCounter">
+                <button id="counterForgedIncrement" class="productCounter__button productCounter--increment">+</button>
+                <input id="counterForgedInput" class="productCounter__input" type="text" value="">
+                <button id="counterForgedDecrement" class="productCounter__button productCounter--increment">-</button>
+                <button id="counterForgedClear" class="productCounter__button productCounter--clear">smazat</button>
+            </div>
+            <p>Vybráno kovaných: <span id="productsTotalForged"></span></p>
 
-                console.log('akce z body');
-            </script>
+            <br><br>                    
+
+            <h2>Lisované</h2>
+            <div id="counterPressed" class="productCounter">
+                <button id="counterPressedIncrement" class="productCounter__button productCounter--increment">+</button>
+                <input id="counterPressedInput" class="productCounter__input" type="text" value="">
+                <button id="counterPressedDecrement" class="productCounter__button productCounter--increment">-</button>
+                <button id="counterPressedClear" class="productCounter__button productCounter--clear">smazat</button>
+            </div>
+            <p>Vybráno lisovaných: <span id="productsTotalPressed"></span></p>
+            
+            <br><br>
+
+            <h3>Celkem vybáno: <span id="productsTotal"></span></h3>
         </section>
 
     </body>

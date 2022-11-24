@@ -13,15 +13,14 @@
         </script>
     </head>
     <body>
-       <script src="scripts.js"></script>
-
        <section class="header">
             <h1 class="header__heading">Děkuji za návštěvu stránek</h1>
             
             <h2>Kované</h2>
+            <h3>Svícen1</h3>
             <div id="counterForged" class="productCounter">
                 <button id="counterForgedIncrement" class="productCounter__button productCounter--increment">+</button>
-                <input id="counterForgedInput" class="productCounter__input" type="text" value="">
+                <input id="counterForgedInput" class="productCounter__input" type="text" value="0">
                 <button id="counterForgedDecrement" class="productCounter__button productCounter--increment">-</button>
                 <button id="counterForgedClear" class="productCounter__button productCounter--clear">smazat</button>
             </div>
@@ -32,7 +31,7 @@
             <h2>Lisované</h2>
             <div id="counterPressed" class="productCounter">
                 <button id="counterPressedIncrement" class="productCounter__button productCounter--increment">+</button>
-                <input id="counterPressedInput" class="productCounter__input" type="text" value="">
+                <input id="counterPressedInput" class="productCounter__input" type="text" value="0">
                 <button id="counterPressedDecrement" class="productCounter__button productCounter--increment">-</button>
                 <button id="counterPressedClear" class="productCounter__button productCounter--clear">smazat</button>
             </div>
@@ -41,8 +40,10 @@
             <br><br>
 
             <h3>Celkem vybáno: <span id="productsTotal"></span></h3>
+
         </section>
 
+        <script src="scripts.js"></script> 
     </body>
     
 </html>

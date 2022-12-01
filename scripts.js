@@ -1,20 +1,3 @@
-// sem možno psát scripty
-console.log('akce z externiho souboru');
-
-let counterForgedIncrement = document.getElementById('counterForgedIncrement');
-let counterForgedInput = document.getElementById('counterForgedInput');
-let counterForgedDecrement = document.getElementById('counterForgedDecrement');
-let counterForgedClear = document.getElementById('counterForgedClear');
-let productsTotalForged = document.getElementById('productsTotalForged');
-
-let counterPressedIncrement = document.querySelector('counterPressedIncrement');
-let counterPressedInput = document.querySelector('counterPressedInput');
-let counterPressedDecrement = document.querySelector('counterPressedDecrement');
-let counterPressedClear = document.querySelector('counterPressedClear');
-let productsTotalPressed = document.querySelector('productsTotalPressed');
-
-let productsTotal = document.querySelector('productsTotal');
-
 
 //counterForgedIncrement.addEventListener('click', () => {                        //anonymni fce v sipkovem zpisu
 //    counterForgedInput.value = parseInt(counterForgedInput.value) + 1;
@@ -24,12 +7,9 @@ let productsTotal = document.querySelector('productsTotal');
 //    counterForgedInput.value = parseInt(counterForgedInput.value) + 1;
 //});
 
-function increment() {                                                              //funkce definovana jako increment
-                                                        
+/*function increment() {                                                              //funkce definovana jako increment
     let counterForgedInputAmount = Number(counterForgedInput.value)
-
-    console.log("i") 
-    if (isNaN(counterForgedInputAmount)) {                                          //vykricnik prevadi na boolean a udela z nej opacnou hodnotu
+    if (isNaN(counterForgedInputAmount)) {                                          //overi zda je nebo neni promenna NaN (true / false)
         counterForgedInput.value = 0
     } else {
         counterForgedInput.value = counterForgedInputAmount + 1;
@@ -39,7 +19,7 @@ function increment() {                                                          
 function decrement() {                                                          //funkce definovana jako increment
     counterForgedInput.value = parseInt(counterForgedInput.value) + 1;
     let counterForgedIncrementAmount = Number(counterForgedIncrement)
-        if (!counterForgedIncrementAmount){                                     //vykricnik prevadi na boolean a udela z nej opacnou hodnotu
+        if (!counterForgedIncrementAmount) {                                     //vykricnik prevadi na boolean a udela z nej opacnou hodnotu
             alert("Zadej číslo");
         }
 }
@@ -48,7 +28,7 @@ counterForgedIncrement.addEventListener('click', increment);                  //
 console.log(counterForgedIncrement)
 
 counterForgedDecrement.addEventListener('click', () => {
-    if (counterForgedInput.value == 0){
+    if (counterForgedInput.value == 0) {
         counterForgedInput.value = 0
     } else {
         counterForgedInput.value = parseInt(counterForgedInput.value) - 1;
@@ -58,3 +38,44 @@ counterForgedDecrement.addEventListener('click', () => {
 counterForgedClear.addEventListener('click', () => {
     counterForgedInput.value = 0
 });
+*/
+
+
+let productCounters = document.getElementsByClassName('productCounter');
+let len = productCounters.length;
+
+for (let i = 0; i < len; i++) {
+    let increment = productCounters[i]
+    console.log(increment)
+    let incrementButton = increment.getElementsByClassName('productCounter--increment')[0];
+    let inputValue = increment.getElementsByClassName('productCounter__input')[0];
+    let decrementButton = increment.getElementsByClassName('productCounter--decrement')[0];
+    let clearButton = increment.getElementsByClassName('productCounter--clear')[0];
+    function incrementation() {                                                              //funkce definovana jako increment
+        let counterInputAmount = Number(inputValue.value)
+        if (isNaN(counterInputAmount)) {                                          //overi zda je nebo neni promenna NaN (true / false)
+            inputValue.value = 0
+        } else if (counterInputAmount < 0) { 
+            inputValue.value = 0
+        } else {
+            inputValue.value = counterInputAmount + 1;
+        }
+    }
+    function decrementation() {                                                              //funkce definovana jako increment
+        let counterInputAmount = Number(inputValue.value)
+        if (isNaN(counterInputAmount)) {                                          //overi zda je nebo neni promenna NaN (true / false)
+            inputValue.value = 0
+        } else if (counterInputAmount <= 0) { 
+            inputValue.value = 0
+        } else {
+            inputValue.value = counterInputAmount - 1;
+        }
+    }
+    incrementButton.addEventListener('click', incrementation);
+    decrementButton.addEventListener('click', decrementation);   
+    clearButton.addEventListener('click', () => {
+        inputValue.value = 0
+    });
+
+
+}

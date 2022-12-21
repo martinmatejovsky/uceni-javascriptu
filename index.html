@@ -6,17 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <title>Učení javascriptu</title>
-        <!-- <script src="firstEnter.js"></script> -->
-        <script>
-            // sem možno psát scripty
-            console.log('akce z head');
-        </script>
+        <!-- load mock data with products -->
+        <script src="data/storeProducts.js"></script>
     </head>
     <body>
        <script src="scripts.js"></script>
 
        <section class="header">
             <h1 class="header__heading">Děkuji za návštěvu stránek</h1>
+
+           <div id="application"></div>
             
             <h2>Kované</h2>
             <div id="counterForged" class="productCounter">
@@ -44,5 +43,5 @@
         </section>
 
     </body>
-    
+    <script src="scripts/renderStoreProducts.js"></script>
 </html>

@@ -11,6 +11,11 @@ let products = `[
                 "name": "Palcát",
                 "onStore": 3,
                 "price": 800
+            },
+            {
+                "name": "Růže",
+                "onStore": 20,
+                "price": 1600
             }
         ]
     },

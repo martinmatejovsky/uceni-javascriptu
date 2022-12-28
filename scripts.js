@@ -43,39 +43,44 @@ counterForgedClear.addEventListener('click', () => {
 
 let productCounters = document.getElementsByClassName('productCounter');
 let len = productCounters.length;
-
-for (let i = 0; i < len; i++) {
-    let increment = productCounters[i]
-    console.log(increment)
-    let incrementButton = increment.getElementsByClassName('productCounter--increment')[0];
-    let inputValue = increment.getElementsByClassName('productCounter__input')[0];
-    let decrementButton = increment.getElementsByClassName('productCounter--decrement')[0];
-    let clearButton = increment.getElementsByClassName('productCounter--clear')[0];
-    function incrementation() {                                                              //funkce definovana jako increment
-        let counterInputAmount = Number(inputValue.value)
-        if (isNaN(counterInputAmount)) {                                          //overi zda je nebo neni promenna NaN (true / false)
-            inputValue.value = 0
-        } else if (counterInputAmount < 0) { 
-            inputValue.value = 0
-        } else {
-            inputValue.value = counterInputAmount + 1;
+let total = 0
+function initCounters(){
+    for (let i = 0; i < len; i++) {
+        let increment = productCounters[i]
+        let incrementButton = increment.getElementsByClassName('productCounter--increment')[0];
+        let inputValue = increment.getElementsByClassName('productCounter__input')[0];
+        let decrementButton = increment.getElementsByClassName('productCounter--decrement')[0];
+        let clearButton = increment.getElementsByClassName('productCounter--clear')[0];
+        function incrementation() {                     //funkce definovana jako increment
+            let counterInputAmount = Number(inputValue.value)
+            if (isNaN(counterInputAmount)) {           //overi zda je nebo neni promenna NaN (true / false)
+                inputValue.value = 0
+            } else if (counterInputAmount < 0) { 
+                inputValue.value = 0
+            } else {
+                inputValue.value = counterInputAmount + 1;
+            }
         }
-    }
-    function decrementation() {                                                              //funkce definovana jako increment
-        let counterInputAmount = Number(inputValue.value)
-        if (isNaN(counterInputAmount)) {                                          //overi zda je nebo neni promenna NaN (true / false)
-            inputValue.value = 0
-        } else if (counterInputAmount <= 0) { 
-            inputValue.value = 0
-        } else {
-            inputValue.value = counterInputAmount - 1;
+        function decrementation() {                    //funkce definovana jako increment
+            let counterInputAmount = Number(inputValue.value)
+            if (isNaN(counterInputAmount)) {           //overi zda je nebo neni promenna NaN (true / false)
+                inputValue.value = 0
+            } else if (counterInputAmount <= 0) { 
+                inputValue.value = 0
+            } else {
+                inputValue.value = counterInputAmount - 1;
+            }
         }
+        incrementButton.addEventListener('click', incrementation);
+        decrementButton.addEventListener('click', decrementation);   
+        clearButton.addEventListener('click', () => {
+            inputValue.value = 0
+        });   
+        inputValue.addEventListener('change', () => {
+            console.log(inputValue.value) 
+        })
     }
-    incrementButton.addEventListener('click', incrementation);
-    decrementButton.addEventListener('click', decrementation);   
-    clearButton.addEventListener('click', () => {
-        inputValue.value = 0
-    });
+    
+} 
 
-
-}
+initCounters()

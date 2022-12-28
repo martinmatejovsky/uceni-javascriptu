@@ -15,32 +15,54 @@
     <body>
        <section class="header">
             <h1 class="header__heading">Děkuji za návštěvu stránek</h1>
-            
-            <h2>Kované</h2>
-            <h3>Svícen1</h3>
-            <div id="counterForged" class="productCounter">
-                <button id="counterForgedIncrement" class="productCounter__button productCounter--increment">+</button>
-                <input id="counterForgedInput" class="productCounter__input" type="text" value="0">
-                <button id="counterForgedDecrement" class="productCounter__button productCounter--decrement">-</button>
-                <button id="counterForgedClear" class="productCounter__button productCounter--clear">smazat</button>
+            <div class="productClass">
+                <h2>Kované</h2>
+                <h3>Svícen1</h3>
+                <div id="counterSvícen1" class="productCounter">
+                    <button id="counterSvícen1Increment" class="productCounter__button productCounter--increment">+</button>
+                    <input id="counterSvícen1Input" class="productCounter__input" type="text" value="0">
+                    <button id="counterSvícen1Decrement" class="productCounter__button productCounter--decrement">-</button>
+                    <button id="counterSvícen1Clear" class="productCounter__button productCounter--clear">smazat</button>
+                </div>
+
+
+                <h3>Svícen2</h3>
+                <div id="counterSvícen2" class="productCounter">
+                    <button id="counterSvícen2Increment" class="productCounter__button productCounter--increment">+</button>
+                    <input id="counterSvícen2Input" class="productCounter__input" type="text" value="0">
+                    <button id="counterSvícen2Decrement" class="productCounter__button productCounter--decrement">-</button>
+                    <button id="counterSvícen2Clear" class="productCounter__button productCounter--clear">smazat</button>
+                </div>
+
+                <p>Vybráno kovaných: <span id="productsTotalForged"></span></p>
             </div>
-            <p>Vybráno kovaných: <span id="productsTotalForged"></span></p>
 
             <br><br>                    
 
-            <h2>Lisované</h2>
-            <div id="counterPressed" class="productCounter">
-                <button id="counterPressedIncrement" class="productCounter__button productCounter--increment">+</button>
-                <input id="counterPressedInput" class="productCounter__input" type="text" value="0">
-                <button id="counterPressedDecrement" class="productCounter__button productCounter--decrement">-</button>
-                <button id="counterPressedClear" class="productCounter__button productCounter--clear">smazat</button>
+            <div class="productClass">
+                <h2>Lisované</h2>
+                <h3>Svícen3</h3>
+                <div id="counterSvícen3" class="productCounter">
+                    <button id="counterSvícen3Increment" class="productCounter__button productCounter--increment">+</button>
+                    <input id="counterSvícen3Input" class="productCounter__input" type="text" value="0">
+                    <button id="counterSvícen3Decrement" class="productCounter__button productCounter--decrement">-</button>
+                    <button id="counterSvícen3Clear" class="productCounter__button productCounter--clear">smazat</button>
+                </div>
+                
+                <h3>Svícen4</h3>
+                <div id="counterLisované" class="productCounter">
+                    <button id="counterSvícen4Increment" class="productCounter__button productCounter--increment">+</button>
+                    <input id="counterSvícen4Input" class="productCounter__input" type="text" value="0">
+                    <button id="counterSvícen4Decrement" class="productCounter__button productCounter--decrement">-</button>
+                    <button id="counterSvícen4Clear" class="productCounter__button productCounter--clear">smazat</button>
+                </div>
+                <p>Vybráno lisovaných: <span id="productsTotalPressed"></span></p>
+
+                <br><br>
+
+
             </div>
-            <p>Vybráno lisovaných: <span id="productsTotalPressed"></span></p>
-            
-            <br><br>
-
             <h3>Celkem vybáno: <span id="productsTotal"></span></h3>
-
         </section>
 
         <script src="scripts.js"></script> 

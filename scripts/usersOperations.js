@@ -3,7 +3,6 @@ let newUsers = ['Jan Honza', 'Karel Gott', 'Josef Pepa']
 const editedUser =  ['2', 'Mgr. Alexandr Saša']
 
 let tempUsers = users.replace('[','').replace(']','').replace(/[\n"]+/gm, '')
-console.log(tempUsers)
 let helpUsers = tempUsers.split(',')
 for (let i = 0; i < helpUsers.length; i++){
     helpUsers[i] = helpUsers[i].trimStart()     //odstrani mezery na zacatku stringu
@@ -43,12 +42,16 @@ applicationPage.insertAdjacentHTML('beforeend', '6 - ' + users + '; My check is:
 
 // 7 - napiš true/false za každou osobu v poli newUsers podle toho, jestli už se nacházejí v poli users
 let userFound = 'true false true'
-// let positionMatch = helpUsers.indexOf("Jan Honza")
 // let newUsers = ['Jan Honza', 'Karel Gott', 'Josef Pepa']
+let isInFeald = ''
 for (let i = 0; i < newUsers.length; i++){
-    
+    if (helpUsers.indexOf(newUsers[i]) < 0){
+        isInFeald = isInFeald + 'False ' 
+    } else {
+        isInFeald = isInFeald + 'True '
+    }
 }
-applicationPage.insertAdjacentHTML('beforeend', '7 - ' + userFound + '<hr>')
+applicationPage.insertAdjacentHTML('beforeend', '7 - ' + userFound + '; My check is: ' + isInFeald + '<hr>')
 
 // 8 - opět z pole newUsers projdi jednotlivé osoby a pokud ještě nejsou v poli users, tak je tam přidej na poslední pozici
 users = [
@@ -58,11 +61,20 @@ users = [
     'Prokop Buben',
     'Karel Gott'
 ]
-applicationPage.insertAdjacentHTML('beforeend', '8 - ' + users + '<hr>')
+for (let i = 0; i < newUsers.length; i++){
+    if (helpUsers.indexOf(newUsers[i]) < 0){
+        helpUsers.push(newUsers[i])
+    }
+}
+applicationPage.insertAdjacentHTML('beforeend', '8 - ' + users + '; My check is: ' + helpUsers + '<hr>')
 
 // 9 - opět z pole newUsers projdi jednotlivé osoby a pokud již jsou v poli users, tak uživatele z pole users smaž
 users = [
     "Mgr. Alexandr Saša",
     'Prokop Buben',
 ]
-applicationPage.insertAdjacentHTML('beforeend', '9 - ' + users + '<hr>')
+
+helpUsers = helpUsers.filter(function(val) {
+    return newUsers.indexOf(val) == -1;
+  });
+applicationPage.insertAdjacentHTML('beforeend', '9 - ' + users + '; My check is: ' + helpUsers + '<hr>')

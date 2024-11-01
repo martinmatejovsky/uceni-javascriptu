@@ -17,40 +17,30 @@ When you have a program that generates this pattern, define a binding size = 8 a
 works for any size, outputting a grid of the given width and height.
 */
 
-/
+
 //delam stringový řetezec, pokud je poseldní prvek krizen, další bude mezera
 let pocetPoli = parseInt(prompt("Zadej kolik polí mám mít šachovnice v jednom řádku:"));
+let poradi = " ";
+let symbol1 = "#";
+let symbol2 = " ";
 let radekNaplneni = function () {
-    let radek;
-    let poradi = radek.charAt(radek.length - 1);
-    let symbol1 = "#";
-    let symbol2 = " ";
+    for (let i = 1; i < pocetPoli; i++) {
+        if (poradi.charAt(poradi.length - 1) == symbol1) {
+            poradi += symbol2;
+        }
+        else {
+            poradi += symbol1;
+        }
+    }
     console.log(poradi);
-    if (poradi = symbol1) {
-        radek += symbol2;
+}
+
+for (i = 1; i <= pocetPoli; i++) {
+    radekNaplneni();
+    if (poradi.charAt(0) == symbol1) {
+        poradi = symbol2;
     }
     else {
-        radek += symbol1;
+        poradi = symbol1;
     }
-    return radek;
 }
-radekNaplneni();
-console.log(radek);
-
-/* for (i = 1; i <= pocetPoli; i++) {
-if (radek = symbol1) {
-   radek.lenght
-       +=
-   
-}
-
-}
-}
-for (i = 1; i <= pocetPoli; i++) {
-//console.log(i);
-//document.write("# ");
-
-
-
-}
-*/

@@ -1,5 +1,5 @@
 
-//counterForgedIncrement.addEventListener('click', () => {                        //anonymni fce v sipkovem zpisu
+// counterForgedIncrement.addEventListener('click', () => {                        //anonymni fce v sipkovem zpisu
 //    counterForgedInput.value = parseInt(counterForgedInput.value) + 1;
 //});
 
@@ -61,7 +61,7 @@ function initCounters(){
                 inputValue.value = counterInputAmount + 1;
             }
         }
-        function decrementation() {                    //funkce definovana jako increment
+        function decrementation() {                    //funkce definovana jako decrement
             let counterInputAmount = Number(inputValue.value)
             if (isNaN(counterInputAmount)) {           //overi zda je nebo neni promenna NaN (true / false)
                 inputValue.value = 0

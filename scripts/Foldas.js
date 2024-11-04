@@ -44,3 +44,4 @@ for (i = 1; i <= pocetPoli; i++) {
         poradi = symbol1;
     }
 }
+//test comitu

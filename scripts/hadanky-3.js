@@ -21,7 +21,11 @@ let abc = "abc";
 console.log(abc.length);
 // → 3
 */
-
+let a = "#"
+let result = ""
+for (let i = 0; i < 8; i++ , result=result+a){
+    console.log(result);
+}
 
 /*
 ====================================================================================

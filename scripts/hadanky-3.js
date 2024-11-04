@@ -36,7 +36,17 @@ When you have that working, modify your program to print "FizzBuzz" for numbers 
 (This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. 
 So if you solved it, your labor market value just went up.)
 */
-
+for (let i=1; i<=100; i++){
+    if (i%3==0 && i%5==0){
+        console.log("FizzBuz \n");
+    } else if (i%3==0){
+        console.log("Fizz \n");
+    } else if (i%5==0){
+        console.log("Buz \n");
+    } else {
+        console.log(`${i}\n`);
+    }
+}
 
 /*
 ====================================================================================

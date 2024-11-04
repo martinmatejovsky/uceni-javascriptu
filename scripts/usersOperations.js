@@ -75,6 +75,6 @@ users = [
 ]
 
 helpUsers = helpUsers.filter(function(val) {
-    return newUsers.indexOf(val) == -1;
+    return newUsers.indexOf(val) === -1;
   });
 applicationPage.insertAdjacentHTML('beforeend', '9 - ' + users + '; My check is: ' + helpUsers + '<hr>')

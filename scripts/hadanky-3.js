@@ -151,15 +151,23 @@ král objednat hru o čtyřech polích.
 Napište funkci, která bude přijímat jeden parametr, a sice číslo, kolik polí daná desková hra má. Pak vypočti, kolik zrnek rýže bude na 
 POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by bylo na posledním poli, pokud by šachy byly jen o 9 polích.
 */
-const odmenaNaPoslednimPoli = function (HerniPole){
+const odmenaNaPoslednimPoliSachovnice = function (HerniPole){
     let finalRevard = 2;
     for (let i = 3; i <= HerniPole*HerniPole; i++){
         finalRevard = finalRevard * 2;
     }
     console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
 }
-odmenaNaPoslednimPoli(9)
+odmenaNaPoslednimPoliSachovnice(9)
 
+const odmenaNaPoslednimPoli = function (Pole){
+    let finalRevard = 2;
+    for (let i = 3; i <= Pole; i++){
+        finalRevard = finalRevard * 2;
+    }
+    console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
+}
+odmenaNaPoslednimPoli(9)
 /*
 ====================================================================================
 # Opravdová dměna pro vynálezce šachů

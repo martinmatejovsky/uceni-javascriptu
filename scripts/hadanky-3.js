@@ -152,6 +152,10 @@ Napište funkci, která bude přijímat jeden parametr, a sice číslo, kolik po
 POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by bylo na posledním poli, pokud by šachy byly jen o 9 polích.
 */
 const odmenaNaPoslednimPoliSachovnice = function (HerniPole){
+    if (HerniPole == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    }
     let finalRevard = 2;
     for (let i = 3; i <= HerniPole*HerniPole; i++){
         finalRevard = finalRevard * 2;
@@ -161,6 +165,13 @@ const odmenaNaPoslednimPoliSachovnice = function (HerniPole){
 odmenaNaPoslednimPoliSachovnice(9)
 
 const odmenaNaPoslednimPoli = function (Pole){
+    if (Pole == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    } else if (Pole == 2){
+        console.log("Na druhem poli jsou 2 zrnka ryze.");
+        return
+    }
     let finalRevard = 2;
     for (let i = 3; i <= Pole; i++){
         finalRevard = finalRevard * 2;
@@ -175,10 +186,32 @@ odmenaNaPoslednimPoli(9)
 Viz předchozí úloha. Nyní se ale zajímáme o to, kolik zrnek rýže vlastně mělo být rozdáno celkem na všech polích dohromady, 
 ne jen kolik to vychází na poslední pole.
 */
-const odmenaCelkem = function (HerniPole){
+const odmenaCelkemSachovnice = function (HerniPole){
+    if (HerniPole == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    }
     let midleRevard = 2;
     let finalRevard = 3;
     for (let i = 3; i <= HerniPole*HerniPole; i++){
+        midleRevard = midleRevard * 2;
+        finalRevard = midleRevard + finalRevard;
+    }
+    console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
+}
+odmenaCelkemSachovnice(9)
+
+const odmenaCelkem = function (Pole){
+    if (Pole == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    } else if (Pole == 2){
+        console.log("Odmena celkem je 3 zrnka ryze.");
+        return
+    }
+    let midleRevard = 2;
+    let finalRevard = 3;
+    for (let i = 3; i <= Pole; i++){
         midleRevard = midleRevard * 2;
         finalRevard = midleRevard + finalRevard;
     }

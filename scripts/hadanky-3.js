@@ -23,7 +23,7 @@ console.log(abc.length);
 */
 let a = "#"
 let result = ""
-for (let i = 0; i < 8; i++ , result=result+a){
+for (let i = 0; i < 8; i++ , result = result + a){
     console.log(result);
 }
 
@@ -41,15 +41,15 @@ When you have that working, modify your program to print "FizzBuzz" for numbers 
 (This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. 
 So if you solved it, your labor market value just went up.)
 */
-for (let i=1; i<=100; i++){
-    if (i%3==0 && i%5==0){
-        console.log("FizzBuz \n");
-    } else if (i%3==0){
-        console.log("Fizz \n");
-    } else if (i%5==0){
-        console.log("Buz \n");
+for (let i = 1; i <= 100; i++){
+    if (i % 3 == 0 && i % 5 == 0){
+        console.log("FizzBuz");
+    } else if (i % 3 == 0){
+        console.log("Fizz");
+    } else if (i % 5 == 0){
+        console.log("Buz ");
     } else {
-        console.log(`${i}\n`);
+        console.log(`${i}`);
     }
 }
 
@@ -159,6 +159,7 @@ const odmenaNaPoslednimPoli = function (HerniPole){
     console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
 }
 odmenaNaPoslednimPoli(9)
+
 /*
 ====================================================================================
 # Opravdová dměna pro vynálezce šachů
@@ -166,7 +167,16 @@ odmenaNaPoslednimPoli(9)
 Viz předchozí úloha. Nyní se ale zajímáme o to, kolik zrnek rýže vlastně mělo být rozdáno celkem na všech polích dohromady, 
 ne jen kolik to vychází na poslední pole.
 */
-
+const odmenaCelkem = function (HerniPole){
+    let midleRevard = 2;
+    let finalRevard = 3;
+    for (let i = 3; i <= HerniPole*HerniPole; i++){
+        midleRevard = midleRevard * 2;
+        finalRevard = midleRevard + finalRevard;
+    }
+    console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
+}
+odmenaCelkem(9)
 
 /*
 ====================================================================================

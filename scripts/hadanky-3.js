@@ -27,6 +27,7 @@ for (let i = 0; i < 8; i++ , result=result+a){
     console.log(result);
 }
 
+
 /*
 ====================================================================================
 # FizzBuzz
@@ -171,3 +172,9 @@ Napište funkci, která přijme jako svůj jediný parametr číslo, které vyja
 je to ovčích měchýřů a žížal.
 Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 */
+const mechyreAzizaly = function (vstupniCislo){
+    let zizaly = vstupniCislo % 7;
+    let mechyre = Math.floor(vstupniCislo / 7);
+    console.log(vstupniCislo + " je " + mechyre + " mechyru a " + zizaly + " zizal");
+}
+mechyreAzizaly(15)

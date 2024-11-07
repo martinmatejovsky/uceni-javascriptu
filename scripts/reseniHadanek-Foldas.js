@@ -225,6 +225,15 @@ Napište funkci, která bude přijímat jeden parametr, a sice číslo, kolik po
 POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by bylo na posledním poli, pokud by šachy byly jen o 9 polích.
 */
 
+let vstupSachy = parseInt(prompt("Zadejte kolik polí má daná desková hra:"));
+console.log("Počet polí deskové hry je: " + vstupSachy);
+let pocetZrnek = 1;
+
+for (let pocetPoli = 1; pocetPoli < vstupSachy; pocetPoli++) {
+    //console.log(pocetZrnek);
+    pocetZrnek = pocetZrnek * 2;
+}
+console.log("Počet zrnek rýže na posledním políčku deskové hry je: " + pocetZrnek);
 
 
 /*
@@ -234,7 +243,15 @@ POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by byl
 Viz předchozí úloha. Nyní se ale zajímáme o to, kolik zrnek rýže vlastně mělo být rozdáno celkem na všech polích dohromady, 
 ne jen kolik to vychází na poslední pole.
 */
-
+let vstupSachy2 = parseInt(prompt("Zadejte kolik polí má daná desková hra:"));
+console.log("Počet polí deskové hry je: " + vstupSachy2);
+let pocetZrnek2 = 1;
+let pocetZrnekCelkem = 1;
+for (let pocetPoli2 = 1; pocetPoli2 < vstupSachy2; pocetPoli2++) {
+    pocetZrnek2 = pocetZrnek2 * 2;
+    pocetZrnekCelkem = pocetZrnekCelkem + pocetZrnek2;
+}
+console.log("Počet zrnek rýže na deskové hře je: " + pocetZrnekCelkem);
 
 /*
 ====================================================================================

@@ -195,7 +195,23 @@ let heroesToCheck = ["Mao Ce Tung", "Pol Pot", 0o7, "Brežněv"]
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
-
+console.log("3C- Matesovi hrdinové jsou:");
+function odstranZPole(pole, typ) {
+    return pole.filter(prvek => typeof prvek !== typ);
+}
+let heroesToCheckNew = odstranZPole(heroesToCheck, "number");
+for (let i = 0; i < heroesToCheckNew.length; i++) {
+    if (i === heroesToCheckNew.length - 1) {
+        console.log(" a " + heroesToCheckNew[i] + ".");
+    }
+    else if (i === heroesToCheckNew.length - 2) {
+        console.log(heroesToCheckNew[i]);
+    }
+    else {
+        console.log(heroesToCheckNew[i] + ", ");
+    }
+}
+//ale teda se to nevypisuje do jednoho řárku. Ale dá se vyřešit místo console.log použít document.write("") ;)
 
 /*
 ====================================================================================

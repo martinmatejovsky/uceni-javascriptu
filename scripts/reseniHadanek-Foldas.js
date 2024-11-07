@@ -167,23 +167,20 @@ let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
-console.log("Matesovi hrdinové jsou: " + heroesComplex[0]);
-console.log(heroesComplex.length);
-if (heroesComplex.length == 3) { // takto zadana podminka funguje
-    console.log("funguje to");
-}
 
-let delkaPole = heroesComplex.length;
-console.log(delkaPole);
+console.log("2.A - Matesovi hrdinové jsou:");
 for (let i = 0; i < heroesComplex.length; i++) {
-    //console.log(heroesComplex[i]);
     if (i === heroesComplex.length - 1) {
-        console.log("a " + heroesComplex[i] + ".");
+        console.log(" a " + heroesComplex[i] + ".");
+    }
+    else if (i === heroesComplex.length - 2) {
+        console.log(heroesComplex[i]);
     }
     else {
-        console.log(heroesComplex[i] + ",");
+        console.log(heroesComplex[i] + ", ");
     }
 }
+// ale asi by to šlo lépe ;)
 
 /*
 ====================================================================================

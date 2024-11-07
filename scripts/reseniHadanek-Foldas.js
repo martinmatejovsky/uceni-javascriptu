@@ -262,3 +262,15 @@ Napište funkci, která přijme jako svůj jediný parametr číslo, které vyja
 je to ovčích měchýřů a žížal.
 Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 */
+
+let zizaly = parseInt(prompt("Kolik žížal chceš převést na měchýře?"));
+
+let prevodNaMechyreAZizaly = function (zizaly) {
+    let celkemZizal = zizaly;
+    let pocetMechyru = Math.floor(zizaly / 7);
+    console.log(pocetMechyru);
+    let pocetZizal = zizaly % 7;
+    console.log(pocetZizal);
+    console.log(celkemZizal + " žižal je ve výsledku " + pocetMechyru + " měchýře a " + pocetZizal + " žížal.");
+}
+prevodNaMechyreAZizaly(zizaly);

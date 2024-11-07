@@ -22,6 +22,9 @@ console.log(abc.length);
 // → 3
 */
 
+for (let i = "#"; i.length <= 7; i = i + "#") {
+    console.log(i);
+}
 
 /*
 ====================================================================================
@@ -36,7 +39,21 @@ When you have that working, modify your program to print "FizzBuzz" for numbers 
 (This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. 
 So if you solved it, your labor market value just went up.)
 */
+for (let ciselnaRada = 1; ciselnaRada <= 100; ciselnaRada++) {
 
+    if (ciselnaRada % 3 === 0 && ciselnaRada % 5 === 0) {
+        console.log("FizzBuin");
+    }
+    else if (ciselnaRada % 3 === 0) {// je delitelna 3) 
+        console.log("Fizz");
+    }
+    else if (ciselnaRada % 5 === 5) { //je delitelna 5)
+        console.log("Buin");
+    }
+    else {
+        console.log(ciselnaRada);
+    }
+}
 
 /*
 ====================================================================================

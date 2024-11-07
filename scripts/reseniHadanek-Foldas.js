@@ -147,8 +147,12 @@ Jména se samozřejmě budou brát postupně z pole "heroes".
 let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot, Brežněv"
+let nameHero = heroesSimple.join(", "); //vypsání bez této funkce by bylo bez mezer za čárkou.
+console.log("1.A - Matesovi hrdinové jsou " + nameHero);
 
+//nebo
 
+console.log("1.B -Matesovi hrdinové jsou " + heroesSimple[0] + ", " + heroesSimple[1] + ", " + heroesSimple[2] + ".");
 
 /*
 ====================================================================================
@@ -163,7 +167,23 @@ let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
+console.log("Matesovi hrdinové jsou: " + heroesComplex[0]);
+console.log(heroesComplex.length);
+if (heroesComplex.length == 3) { // takto zadana podminka funguje
+    console.log("funguje to");
+}
 
+let delkaPole = heroesComplex.length;
+console.log(delkaPole);
+for (let i = 0; i < heroesComplex.length; i++) {
+    //console.log(heroesComplex[i]);
+    if (i === heroesComplex.length - 1) {
+        console.log("a " + heroesComplex[i] + ".");
+    }
+    else {
+        console.log(heroesComplex[i] + ",");
+    }
+}
 
 /*
 ====================================================================================

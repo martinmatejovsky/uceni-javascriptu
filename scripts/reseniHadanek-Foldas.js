@@ -76,6 +76,31 @@ When you have a program that generates this pattern, define a binding size = 8 a
 works for any size, outputting a grid of the given width and height.
 */
 
+let pocetPoli = parseInt(prompt("Zadej kolik polí mám mít šachovnice v jednom řádku:"));
+let poradi = " ";
+let symbol1 = "#";
+let symbol2 = " ";
+let radekNaplneni = function () {
+    for (let i = 1; i < pocetPoli; i++) {
+        if (poradi.charAt(poradi.length - 1) == symbol1) { //funkce zjistí znak na daném místě, začíná se na 0,jako u POLE
+            poradi += symbol2;
+        }
+        else {
+            poradi += symbol1;
+        }
+    }
+    console.log(poradi);
+}
+
+for (i = 1; i <= pocetPoli; i++) {
+    radekNaplneni();
+    if (poradi.charAt(0) == symbol1) {
+        poradi = symbol2;
+    }
+    else {
+        poradi = symbol1;
+    }
+}
 
 
 /*
@@ -85,7 +110,11 @@ works for any size, outputting a grid of the given width and height.
 Napiš funkci, která přijme pole čísel a vrátí největší číslo.
 */
 let randomNumbers = [2, 2, 8, 123, 1, -1]
-
+//ALE POTŘENUJI VYSVĚTLIT JAK FUNGUJE TA FUNKCE
+randomNumbers.sort(function (a, b) { return a - b });
+//console.log(randomNumbers[0]);
+randomNumbers.reverse();
+console.log(randomNumbers[0]);
 
 
 /*
@@ -96,6 +125,15 @@ Napiš funkci, která vytvoří nové pole (treba jmenem badGrades), ve kterém 
 Jako vstup si vezmeme proměnnou znamkyVeSkole
 */
 let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2]
+
+let badGrades = [];
+for (let i = 0; i <= gradesAtSchool.length - 1; i++) {
+    if (gradesAtSchool[i] > 3) {
+        badGrades.push(gradesAtSchool[i]);
+    }
+}
+console.log(badGrades);
+
 
 
 

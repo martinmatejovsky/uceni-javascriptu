@@ -73,12 +73,12 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a binding size = 8 and change the program so that it 
 works for any size, outputting a grid of the given width and height.
 */
-const chessBoard = function (size){
+const chessBoard = function (width,height){
 let i;
 let j;
-for (i = 0; i < size; i++){
+for (i = 0; i < height; i++){
     let line = "";
-    for (j = 0; j < size; j++){
+    for (j = 0; j < width; j++){
         if ((i + j) % 2 == 0){
             line = line + " "
         } else {
@@ -88,7 +88,7 @@ for (i = 0; i < size; i++){
         console.log(line)
     }
 }
-chessBoard (8)
+chessBoard (8,2)
 
 /*
 ====================================================================================

@@ -96,8 +96,15 @@ chessBoard (8,2)
 ====================================================================================
 Napiš funkci, která přijme pole čísel a vrátí největší číslo.
 */
-let randomNumbers = [2, 2, 8, 123, 1, -1]
-
+let randomNumbers = [2, 2, 8, 123, 1, -1];
+let max = randomNumbers[0];
+let size = randomNumbers.length;
+for(let i = 0; i < size; i++){
+    if (max <= randomNumbers[i+1]){
+        max = randomNumbers[i+1];
+    } 
+}
+console.log(max);
 
 
 /*

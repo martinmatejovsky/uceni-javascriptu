@@ -73,8 +73,22 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a binding size = 8 and change the program so that it 
 works for any size, outputting a grid of the given width and height.
 */
-
-
+const chessBoard = function (size){
+let i;
+let j;
+for (i = 0; i < size; i++){
+    let line = "";
+    for (j = 0; j < size; j++){
+        if ((i + j) % 2 == 0){
+            line = line + " "
+        } else {
+            line = line + "#"
+        }
+        }
+        console.log(line)
+    }
+}
+chessBoard (8)
 
 /*
 ====================================================================================
@@ -151,34 +165,34 @@ král objednat hru o čtyřech polích.
 Napište funkci, která bude přijímat jeden parametr, a sice číslo, kolik polí daná desková hra má. Pak vypočti, kolik zrnek rýže bude na 
 POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by bylo na posledním poli, pokud by šachy byly jen o 9 polích.
 */
-const odmenaNaPoslednimPoliSachovnice = function (HerniPole){
-    if (HerniPole == 1){
+const revardOnLastFieldOfSquereBoard = function (SquereBoard){
+    if (SquereBoard == 1){
         console.log("Na poli je 1 zrnko ryze.");
         return
     }
     let finalRevard = 2;
-    for (let i = 3; i <= HerniPole*HerniPole; i++){
+    for (let i = 3; i <= SquereBoard * SquereBoard; i++){
         finalRevard = finalRevard * 2;
     }
     console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
 }
-odmenaNaPoslednimPoliSachovnice(9)
+revardOnLastFieldOfSquereBoard(2)
 
-const odmenaNaPoslednimPoli = function (Pole){
-    if (Pole == 1){
+const revardOnLastField = function (Field){
+    if (Field == 1){
         console.log("Na poli je 1 zrnko ryze.");
         return
-    } else if (Pole == 2){
+    } else if (Field == 2){
         console.log("Na druhem poli jsou 2 zrnka ryze.");
         return
     }
     let finalRevard = 2;
-    for (let i = 3; i <= Pole; i++){
+    for (let i = 3; i <= Field; i++){
         finalRevard = finalRevard * 2;
     }
     console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
 }
-odmenaNaPoslednimPoli(9)
+revardOnLastField(9)
 /*
 ====================================================================================
 # Opravdová dměna pro vynálezce šachů
@@ -186,38 +200,38 @@ odmenaNaPoslednimPoli(9)
 Viz předchozí úloha. Nyní se ale zajímáme o to, kolik zrnek rýže vlastně mělo být rozdáno celkem na všech polích dohromady, 
 ne jen kolik to vychází na poslední pole.
 */
-const odmenaCelkemSachovnice = function (HerniPole){
-    if (HerniPole == 1){
+const revardSumOnSquereField = function (SquereBoard){
+    if (SquereBoard == 1){
         console.log("Na poli je 1 zrnko ryze.");
         return
     }
     let midleRevard = 2;
     let finalRevard = 3;
-    for (let i = 3; i <= HerniPole*HerniPole; i++){
+    for (let i = 3; i <= SquereBoard * SquereBoard; i++){
         midleRevard = midleRevard * 2;
         finalRevard = midleRevard + finalRevard;
     }
     console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
 }
-odmenaCelkemSachovnice(9)
+revardSumOnSquereField(9)
 
-const odmenaCelkem = function (Pole){
-    if (Pole == 1){
+const revardSum = function (Field){
+    if (Field == 1){
         console.log("Na poli je 1 zrnko ryze.");
         return
-    } else if (Pole == 2){
+    } else if (Field == 2){
         console.log("Odmena celkem je 3 zrnka ryze.");
         return
     }
     let midleRevard = 2;
     let finalRevard = 3;
-    for (let i = 3; i <= Pole; i++){
+    for (let i = 3; i <= Field; i++){
         midleRevard = midleRevard * 2;
         finalRevard = midleRevard + finalRevard;
     }
     console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
 }
-odmenaCelkem(9)
+revardSum(9)
 
 /*
 ====================================================================================
@@ -228,9 +242,9 @@ Napište funkci, která přijme jako svůj jediný parametr číslo, které vyja
 je to ovčích měchýřů a žížal.
 Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 */
-const mechyreAzizaly = function (vstupniCislo){
-    let zizaly = vstupniCislo % 7;
-    let mechyre = Math.floor(vstupniCislo / 7);
-    console.log(vstupniCislo + " je " + mechyre + " mechyru a " + zizaly + " zizal");
+const mechyreAzizaly = function (insertNumber){
+    let zizaly = insertNumber % 7;
+    let mechyre = Math.floor(insertNumber / 7);
+    console.log(insertNumber + " je " + mechyre + " mechyru a " + zizaly + " zizal");
 }
 mechyreAzizaly(15)

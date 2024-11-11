@@ -133,8 +133,20 @@ badGrades(gradesAtSchool)
 Napište funkci, která vrátí textovou větu začínající "Mí hrdinové jsou " a pak vypsaná jména z pole "heroes" oddělená čárkou.
 Jména se samozřejmě budou brát postupně z pole "heroes".
 */
-let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
-
+let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
+const myHerosSimple = function (heroesSimple){
+    let initPart = "Mí hrdinové jsou ";
+    let size2 = heroesSimple.length;
+    for (let i = 0; i < size2; i++){
+        if (i < size2 - 1){
+            initPart = initPart + heroesSimple[i] + ", ";
+        } else {
+            initPart = initPart + heroesSimple[i];
+        }
+    }
+    console.log(initPart)
+}
+myHerosSimple(heroesSimple)
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot, Brežněv"
 
 
@@ -148,10 +160,10 @@ přičemž před posledním jménem nebude čárka, ale "a". Jména se samozřej
 Nápověda: počet položek v poli zjistíte přes vlastnost (property) jménem .length.
 heroes.length // napise 4
 */
-let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
+let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
+
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
-
 
 
 /*

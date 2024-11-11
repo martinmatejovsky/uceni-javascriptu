@@ -190,7 +190,29 @@ Nápověda: operátor typeof. Jeden z tzv. unárních operátorů, protože oper
 operátor, jako třeba plus, potřebuje dvě hodnoty, 1 + 1
 */
 let heroesToCheck = ["Mao Ce Tung", "Pol Pot", 0o7, "Brežněv"]
-
+const myHerosToCheck = function (heroesToCheck){
+    let initPart = "Mí hrdinové jsou ";
+    let size3 = heroesToCheck.length;
+    let newHeroes = [];
+    for (let i = 0; i < size3; i++){
+        let checkString = typeof heroesToCheck[i];
+        if (checkString == "string"){
+            newHeroes.push(heroesToCheck[i]);
+        }
+    }
+    let size4 = newHeroes.length;
+    for (let i = 0; i < size4; i++){
+        if (i < size4 - 2){
+            initPart = initPart + newHeroes[i] + ", ";
+        } else if(i < size4 - 1){
+            initPart = initPart + newHeroes[i];
+        }else {
+            initPart = initPart + " a " + newHeroes[i];
+        }
+    }    
+    console.log(initPart)
+}
+myHerosToCheck(heroesToCheck)
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
 

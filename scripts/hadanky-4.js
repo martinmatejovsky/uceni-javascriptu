@@ -53,6 +53,11 @@ let transferCsToFh2 = function (celsius) {
 }
 console.log(transferCsToFh2(40));
 
+// treti způsob
+let transferCsToFh3 = (celsius) => celsius * 1.8 + 32;
+
+console.log(transferCsToFh3(41));
+
 
 // // napise do console i vrátí (klíčové slovo "return"), kolik je to stupnu
 

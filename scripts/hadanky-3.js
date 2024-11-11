@@ -99,9 +99,9 @@ Napiš funkci, která přijme pole čísel a vrátí největší číslo.
 let randomNumbers = [2, 2, 8, 123, 1, -1];
 let max = randomNumbers[0];
 let size = randomNumbers.length;
-for(let i = 0; i < size; i++){
-    if (max <= randomNumbers[i+1]){
-        max = randomNumbers[i+1];
+for(let i = 1; i < size; i++){
+    if (max <= randomNumbers[i]){
+        max = randomNumbers[i];
     } 
 }
 console.log(max);
@@ -114,7 +114,8 @@ console.log(max);
 Napiš funkci, která vytvoří nové pole (treba jmenem badGrades), ve kterém budou jen ta čísla, co jsou větší než 3.
 Jako vstup si vezmeme proměnnou znamkyVeSkole
 */
-let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2]
+let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2];
+
 
 
 

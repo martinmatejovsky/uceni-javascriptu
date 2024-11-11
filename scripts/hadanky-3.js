@@ -161,7 +161,21 @@ Nápověda: počet položek v poli zjistíte přes vlastnost (property) jménem 
 heroes.length // napise 4
 */
 let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
-
+const myHerosComplex = function (heroesComplex){
+    let initPart = "Mí hrdinové jsou ";
+    let size2 = heroesComplex.length;
+    for (let i = 0; i < size2; i++){
+        if (i < size2 - 2){
+            initPart = initPart + heroesComplex[i] + ", ";
+        } else if(i < size2 - 1){
+            initPart = initPart + heroesComplex[i];
+        }else {
+            initPart = initPart + " a " + heroesComplex[i];
+        }
+    }
+    console.log(initPart)
+}
+myHerosComplex(heroesComplex)
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 

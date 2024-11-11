@@ -115,10 +115,17 @@ Napiš funkci, která vytvoří nové pole (treba jmenem badGrades), ve kterém 
 Jako vstup si vezmeme proměnnou znamkyVeSkole
 */
 let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2];
-
-
-
-
+const badGrades = function (gradesAtSchool){
+    let size1 = gradesAtSchool.length;
+    let bGrades = [];
+    for (let i = 0; i < size1; i++){
+        if (gradesAtSchool[i] > 3){
+            bGrades.push(gradesAtSchool[i]);
+        }
+    }
+    console.log(bGrades);
+}
+badGrades(gradesAtSchool)
 /*
 ====================================================================================
 # Hrdinové socialistické práce 1

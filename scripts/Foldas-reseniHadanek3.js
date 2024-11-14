@@ -266,11 +266,8 @@ Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 let zizaly = parseInt(prompt("Kolik žížal chceš převést na měchýře?"));
 
 let prevodNaMechyreAZizaly = function (zizaly) {
-    let celkemZizal = zizaly;
-    let pocetMechyru = Math.floor(zizaly / 7);
-    console.log(pocetMechyru);
-    let pocetZizal = zizaly % 7;
-    console.log(pocetZizal);
-    console.log(celkemZizal + " žižal je ve výsledku " + pocetMechyru + " měchýře a " + pocetZizal + " žížal.");
+    console.log(Math.floor(zizaly / 7));
+    console.log((zizaly % 7));
+    console.log(zizaly + " žižal je ve výsledku " + Math.floor(zizaly / 7) + " měchýře a " + zizaly % 7 + " žížal.");
 }
 prevodNaMechyreAZizaly(zizaly);

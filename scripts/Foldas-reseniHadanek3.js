@@ -211,6 +211,24 @@ for (let i = 0; i < heroesToCheckNew.length; i++) {
         console.log(heroesToCheckNew[i] + ", ");
     }
 }
+
+// další řešení prostřednictvím funkce .FILTER
+
+let newHeroesInString = [];
+newHeroesInString = heroesToCheck.filter(element => typeof (element) === "string");
+for (let i = 0; i < newHeroesInString.length; i++) {
+    if (i === newHeroesInString.length - 1) {
+        console.log(" a " + newHeroesInString[i] + ".");
+    }
+    else if (i === newHeroesInString.length - 2) {
+        console.log(newHeroesInString[i]);
+    }
+    else {
+        console.log(newHeroesInString[i] + ", ");
+    }
+}
+
+
 //ale teda se to nevypisuje do jednoho řárku. Ale dá se vyřešit místo console.log použít document.write("") ;)
 
 /*

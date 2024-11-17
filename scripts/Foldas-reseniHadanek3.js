@@ -154,6 +154,10 @@ console.log("1.A - Matesovi hrdinové jsou " + nameHero);
 
 console.log("1.B -Matesovi hrdinové jsou " + heroesSimple[0] + ", " + heroesSimple[1] + ", " + heroesSimple[2] + ".");
 
+// nebo za užití funkce .MAP
+let NewHeroesSimple = heroesSimple.map(element => " " + element);
+console.log("1.C- Matesovi hrdinové jsou " + NewHeroesSimple);
+
 /*
 ====================================================================================
 # Hrdinové socialistické práce 2

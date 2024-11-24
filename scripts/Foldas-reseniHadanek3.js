@@ -23,7 +23,7 @@ console.log(abc.length);
 */
 
 for (let i = "#"; i.length <= 7; i = i + "#") {
-    console.log(i);
+  console.log(i);
 }
 
 /*
@@ -40,19 +40,17 @@ When you have that working, modify your program to print "FizzBuzz" for numbers 
 So if you solved it, your labor market value just went up.)
 */
 for (let ciselnaRada = 1; ciselnaRada <= 100; ciselnaRada++) {
-
-    if (ciselnaRada % 3 === 0 && ciselnaRada % 5 === 0) {
-        console.log("FizzBuin");
-    }
-    else if (ciselnaRada % 3 === 0) {// je delitelna 3) 
-        console.log("Fizz");
-    }
-    else if (ciselnaRada % 5 === 5) { //je delitelna 5)
-        console.log("Buin");
-    }
-    else {
-        console.log(ciselnaRada);
-    }
+  if (ciselnaRada % 3 === 0 && ciselnaRada % 5 === 0) {
+    console.log("FizzBuin");
+  } else if (ciselnaRada % 3 === 0) {
+    // je delitelna 3)
+    console.log("Fizz");
+  } else if (ciselnaRada % 5 === 5) {
+    //je delitelna 5)
+    console.log("Buin");
+  } else {
+    console.log(ciselnaRada);
+  }
 }
 
 /*
@@ -76,32 +74,32 @@ When you have a program that generates this pattern, define a binding size = 8 a
 works for any size, outputting a grid of the given width and height.
 */
 
-let pocetPoli = parseInt(prompt("Zadej kolik polí mám mít šachovnice v jednom řádku:"));
+let pocetPoli = parseInt(
+  prompt("Zadej kolik polí mám mít šachovnice v jednom řádku:")
+);
 let poradi = " ";
 let symbol1 = "#";
 let symbol2 = " ";
 let radekNaplneni = function () {
-    for (let i = 1; i < pocetPoli; i++) {
-        if (poradi.charAt(poradi.length - 1) == symbol1) { //funkce zjistí znak na daném místě, začíná se na 0,jako u POLE
-            poradi += symbol2;
-        }
-        else {
-            poradi += symbol1;
-        }
+  for (let i = 1; i < pocetPoli; i++) {
+    if (poradi.charAt(poradi.length - 1) == symbol1) {
+      //funkce zjistí znak na daném místě, začíná se na 0,jako u POLE
+      poradi += symbol2;
+    } else {
+      poradi += symbol1;
     }
-    console.log(poradi);
-}
+  }
+  console.log(poradi);
+};
 
 for (i = 1; i <= pocetPoli; i++) {
-    radekNaplneni();
-    if (poradi.charAt(0) == symbol1) {
-        poradi = symbol2;
-    }
-    else {
-        poradi = symbol1;
-    }
+  radekNaplneni();
+  if (poradi.charAt(0) == symbol1) {
+    poradi = symbol2;
+  } else {
+    poradi = symbol1;
+  }
 }
-
 
 /*
 ====================================================================================
@@ -109,13 +107,25 @@ for (i = 1; i <= pocetPoli; i++) {
 ====================================================================================
 Napiš funkci, která přijme pole čísel a vrátí největší číslo.
 */
-let randomNumbers = [2, 2, 8, 123, 1, -1]
+let randomNumbers = [2, 2, 8, 123, "error", 1, -1];
 //ALE POTŘENUJI VYSVĚTLIT JAK FUNGUJE TA FUNKCE
-randomNumbers.sort(function (a, b) { return a - b });
+randomNumbers.sort(function (a, b) {
+  return a - b;
+});
 //console.log(randomNumbers[0]);
 randomNumbers.reverse();
 console.log(randomNumbers[0]);
 
+// jiné řešení, vlastní
+let maximumNumber = randomNumbers[0];
+for (i = 0; i < randomNumbers.length - 1; i++) {
+  if (typeof randomNumbers[i] !== "number") continue;
+
+  if (randomNumbers[i] > maximumNumber) {
+    maximumNumber = randomNumbers[i];
+  }
+}
+console.log(maximumNumber);
 
 /*
 ====================================================================================
@@ -124,18 +134,15 @@ console.log(randomNumbers[0]);
 Napiš funkci, která vytvoří nové pole (treba jmenem badGrades), ve kterém budou jen ta čísla, co jsou větší než 3.
 Jako vstup si vezmeme proměnnou znamkyVeSkole
 */
-let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2]
+let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2];
 
 let badGrades = [];
 for (let i = 0; i <= gradesAtSchool.length - 1; i++) {
-    if (gradesAtSchool[i] > 3) {
-        badGrades.push(gradesAtSchool[i]);
-    }
+  if (gradesAtSchool[i] > 3) {
+    badGrades.push(gradesAtSchool[i]);
+  }
 }
 console.log(badGrades);
-
-
-
 
 /*
 ====================================================================================
@@ -144,7 +151,7 @@ console.log(badGrades);
 Napište funkci, která vrátí textovou větu začínající "Mí hrdinové jsou " a pak vypsaná jména z pole "heroes" oddělená čárkou.
 Jména se samozřejmě budou brát postupně z pole "heroes".
 */
-let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
+let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot, Brežněv"
 let nameHero = heroesSimple.join(", "); //vypsání bez této funkce by bylo bez mezer za čárkou.
@@ -152,10 +159,18 @@ console.log("1.A - Matesovi hrdinové jsou " + nameHero);
 
 //nebo
 
-console.log("1.B -Matesovi hrdinové jsou " + heroesSimple[0] + ", " + heroesSimple[1] + ", " + heroesSimple[2] + ".");
+console.log(
+  "1.B -Matesovi hrdinové jsou " +
+    heroesSimple[0] +
+    ", " +
+    heroesSimple[1] +
+    ", " +
+    heroesSimple[2] +
+    "."
+);
 
 // nebo za užití funkce .MAP
-let NewHeroesSimple = heroesSimple.map(element => " " + element);
+let NewHeroesSimple = heroesSimple.map((element) => " " + element);
 console.log("1.C- Matesovi hrdinové jsou " + NewHeroesSimple);
 
 /*
@@ -167,22 +182,19 @@ přičemž před posledním jménem nebude čárka, ale "a". Jména se samozřej
 Nápověda: počet položek v poli zjistíte přes vlastnost (property) jménem .length.
 heroes.length // napise 4
 */
-let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
+let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
-
 console.log("2.A - Matesovi hrdinové jsou:");
 for (let i = 0; i < heroesComplex.length; i++) {
-    if (i === heroesComplex.length - 1) {
-        console.log(" a " + heroesComplex[i] + ".");
-    }
-    else if (i === heroesComplex.length - 2) {
-        console.log(heroesComplex[i]);
-    }
-    else {
-        console.log(heroesComplex[i] + ", ");
-    }
+  if (i === heroesComplex.length - 1) {
+    console.log(" a " + heroesComplex[i] + ".");
+  } else if (i === heroesComplex.length - 2) {
+    console.log(heroesComplex[i]);
+  } else {
+    console.log(heroesComplex[i] + ", ");
+  }
 }
 // ale asi by to šlo lépe ;)
 
@@ -195,43 +207,40 @@ položka z pole je datového typu text. Pokud ne, tak ji do věty nepřidávejte
 Nápověda: operátor typeof. Jeden z tzv. unárních operátorů, protože operaci udělají jen s jednou hodnotou. Naproti tomu binární
 operátor, jako třeba plus, potřebuje dvě hodnoty, 1 + 1
 */
-let heroesToCheck = ["Mao Ce Tung", "Pol Pot", 0o7, "Brežněv"]
+let heroesToCheck = ["Mao Ce Tung", "Pol Pot", 0o7, "Brežněv"];
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
 console.log("3C- Matesovi hrdinové jsou:");
 function odstranZPole(pole, typ) {
-    return pole.filter(prvek => typeof prvek !== typ);
+  return pole.filter((prvek) => typeof prvek !== typ);
 }
 let heroesToCheckNew = odstranZPole(heroesToCheck, "number");
 for (let i = 0; i < heroesToCheckNew.length; i++) {
-    if (i === heroesToCheckNew.length - 1) {
-        console.log(" a " + heroesToCheckNew[i] + ".");
-    }
-    else if (i === heroesToCheckNew.length - 2) {
-        console.log(heroesToCheckNew[i]);
-    }
-    else {
-        console.log(heroesToCheckNew[i] + ", ");
-    }
+  if (i === heroesToCheckNew.length - 1) {
+    console.log(" a " + heroesToCheckNew[i] + ".");
+  } else if (i === heroesToCheckNew.length - 2) {
+    console.log(heroesToCheckNew[i]);
+  } else {
+    console.log(heroesToCheckNew[i] + ", ");
+  }
 }
 
 // další řešení prostřednictvím funkce .FILTER
 
 let newHeroesInString = [];
-newHeroesInString = heroesToCheck.filter(element => typeof (element) === "string");
+newHeroesInString = heroesToCheck.filter(
+  (element) => typeof element === "string"
+);
 for (let i = 0; i < newHeroesInString.length; i++) {
-    if (i === newHeroesInString.length - 1) {
-        console.log(" a " + newHeroesInString[i] + ".");
-    }
-    else if (i === newHeroesInString.length - 2) {
-        console.log(newHeroesInString[i]);
-    }
-    else {
-        console.log(newHeroesInString[i] + ", ");
-    }
+  if (i === newHeroesInString.length - 1) {
+    console.log(" a " + newHeroesInString[i] + ".");
+  } else if (i === newHeroesInString.length - 2) {
+    console.log(newHeroesInString[i]);
+  } else {
+    console.log(newHeroesInString[i] + ", ");
+  }
 }
-
 
 //ale teda se to nevypisuje do jednoho řárku. Ale dá se vyřešit místo console.log použít document.write("") ;)
 
@@ -252,11 +261,12 @@ console.log("Počet polí deskové hry je: " + vstupSachy);
 let pocetZrnek = 1;
 
 for (let pocetPoli = 1; pocetPoli < vstupSachy; pocetPoli++) {
-    //console.log(pocetZrnek);
-    pocetZrnek = pocetZrnek * 2;
+  //console.log(pocetZrnek);
+  pocetZrnek = pocetZrnek * 2;
 }
-console.log("Počet zrnek rýže na posledním políčku deskové hry je: " + pocetZrnek);
-
+console.log(
+  "Počet zrnek rýže na posledním políčku deskové hry je: " + pocetZrnek
+);
 
 /*
 ====================================================================================
@@ -270,8 +280,8 @@ console.log("Počet polí deskové hry je: " + vstupSachy2);
 let pocetZrnek2 = 1;
 let pocetZrnekCelkem = 1;
 for (let pocetPoli2 = 1; pocetPoli2 < vstupSachy2; pocetPoli2++) {
-    pocetZrnek2 = pocetZrnek2 * 2;
-    pocetZrnekCelkem = pocetZrnekCelkem + pocetZrnek2;
+  pocetZrnek2 = pocetZrnek2 * 2;
+  pocetZrnekCelkem = pocetZrnekCelkem + pocetZrnek2;
 }
 console.log("Počet zrnek rýže na deskové hře je: " + pocetZrnekCelkem);
 
@@ -288,8 +298,15 @@ Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 let zizaly = parseInt(prompt("Kolik žížal chceš převést na měchýře?"));
 
 let prevodNaMechyreAZizaly = function (zizaly) {
-    console.log(Math.floor(zizaly / 7));
-    console.log((zizaly % 7));
-    console.log(zizaly + " žižal je ve výsledku " + Math.floor(zizaly / 7) + " měchýře a " + zizaly % 7 + " žížal.");
-}
+  console.log(Math.floor(zizaly / 7));
+  console.log(zizaly % 7);
+  console.log(
+    zizaly +
+      " žižal je ve výsledku " +
+      Math.floor(zizaly / 7) +
+      " měchýře a " +
+      (zizaly % 7) +
+      " žížal."
+  );
+};
 prevodNaMechyreAZizaly(zizaly);

@@ -1,26 +1,39 @@
-h1 {
-    color: red;
+html {
+    padding: 20px;
+    background-color: #dedfe3;
 }
 
- /* Product incrfementer */
-.productCounter {
+body {
+    max-width: 800px;
+    margin: 20px auto;
+    color: #403e3e;
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
     display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 10px;
 }
 
-.productCounter__button {
-    width: 40px;
-    height: 40px;
+button {
+    padding: 8px 16px;
+    background-color: #304080;
+    font-size: 18px;
+    color: #fff;
+    border: 0 none;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    transition: background-color 0.3s;
 }
 
-.productCounter__input {
-    width: 50px;
-    height: 34px;
-    margin: 0 20px;
+button:hover {
+    background-color: #0d1a50;
 }
 
-.productCounter--clear {
-    width: auto;
-    margin-left: 20px;
+@media screen and (min-width: 800px)  {
+    h1 {
+        font-size: 60px;
+    }
 }

@@ -6,68 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <title>Učení javascriptu</title>
-        <!-- <script src="firstEnter.js"></script> -->
-        <script>
-            // sem možno psát scripty
-            console.log('akce z head');
-        </script>
     </head>
+
     <body>
-       <section class="header">
-           <nav><a href="./data-overview.html">Přehled dat</a></nav>
+        <section class="header">
+            <h1 class="header__heading">Učení javascriptu</h1>
 
-            <h1 class="header__heading">Děkuji za návštěvu stránek!</h1>
-            <div class="productClass">
-                <h2>Kované</h2>
-                <h3>Svícen1</h3>
-                <div id="counterSvícen1" class="productCounter">
-                    <button id="counterSvícen1Increment" class="productCounter__button productCounter--increment">+</button>
-                    <input id="counterSvícen1Input" class="productCounter__input" type="text" value="0">
-                    <button id="counterSvícen1Decrement" class="productCounter__button productCounter--decrement">-</button>
-                    <button id="counterSvícen1Clear" class="productCounter__button productCounter--clear">smazat</button>
-                </div>
-
-
-                <h3>Svícen2</h3>
-                <div id="counterSvícen2" class="productCounter">
-                    <button id="counterSvícen2Increment" class="productCounter__button productCounter--increment">+</button>
-                    <input id="counterSvícen2Input" class="productCounter__input" type="text" value="0">
-                    <button id="counterSvícen2Decrement" class="productCounter__button productCounter--decrement">-</button>
-                    <button id="counterSvícen2Clear" class="productCounter__button productCounter--clear">smazat</button>
-                </div>
-
-                <p>Vybráno kovaných: <span id="productsTotalForged"></span></p>
-            </div>
-
-            <br><br>                    
-
-            <div class="productClass">
-                <h2>Lisované</h2>
-                <h3>Svícen3</h3>
-                <div id="counterSvícen3" class="productCounter">
-                    <button id="counterSvícen3Increment" class="productCounter__button productCounter--increment">+</button>
-                    <input id="counterSvícen3Input" class="productCounter__input" type="text" value="0">
-                    <button id="counterSvícen3Decrement" class="productCounter__button productCounter--decrement">-</button>
-                    <button id="counterSvícen3Clear" class="productCounter__button productCounter--clear">smazat</button>
-                </div>
-
-                <h3>Svícen4</h3>
-                <div id="counterLisované" class="productCounter">
-                    <button id="counterSvícen4Increment" class="productCounter__button productCounter--increment">+</button>
-                    <input id="counterSvícen4Input" class="productCounter__input" type="text" value="0">
-                    <button id="counterSvícen4Decrement" class="productCounter__button productCounter--decrement">-</button>
-                    <button id="counterSvícen4Clear" class="productCounter__button productCounter--clear">smazat</button>
-                </div>
-                <p>Vybráno lisovaných: <span id="productsTotalPressed"></span></p>
-
-                <br><br>
-
-
-            </div>
-            <h3>Celkem vybáno: <span id="productsTotal"></span></h3>
+            <nav>
+                <ul>
+                   <li><a href="./data-overview.html">Přehled dat</a></li>
+                   <li><a href="./pages/piano-notes-randomizer.html">Náhodné noty pro piano</a></li>
+                </ul>
+            </nav>
         </section>
-
-        <script src="scripts.js"></script>
     </body>
-    
 </html>

@@ -12,7 +12,24 @@ or
 const randomNumber = () => {}
 */
 
+const randomNumber0 = () => Math.floor(Math.random() * 10); //nefunguje pro nulu
+console.log("Jedno náhodné číslo je: " + randomNumber0());
 
+const randomNumber = function () {
+  //   let x = Math.random()
+  let minNum = 1;
+  let maxNum = 10;
+  let arrRandomNumber = [];
+  for (let i = 0; i < 10; i++) {
+    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum + 1) + 1));
+  }
+  console.log(
+    `Pole deseti čísel mezi 1 a 10 je následující: ${arrRandomNumber}`
+  );
+};
+
+randomNumber();
+randomNumber();
 
 /*
 ====================================================================================
@@ -36,8 +53,6 @@ console.log(jolandaSpeaks())
 ...
 */
 
-
-
 /*
 ====================================================================================
 Jolanda's prophecy
@@ -60,7 +75,6 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
-
 
 /*
 ====================================================================================

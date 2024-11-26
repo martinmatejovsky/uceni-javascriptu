@@ -12,17 +12,18 @@ or
 const randomNumber = () => {}
 */
 
-const randomNumber0 = () => Math.floor(Math.random() * 10); //nefunguje pro nulu
+const randomNumber0 = () => Math.floor(Math.random() * 10); //nefunguje pro nulu a °0
 console.log("Jedno náhodné číslo je: " + randomNumber0());
 
 const randomNumber = function () {
   //   let x = Math.random()
   let minNum = 1;
-  let maxNum = 10;
+  let maxNum = 11;
   let arrRandomNumber = [];
   for (let i = 0; i < 10; i++) {
-    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum + 1) + 1));
+    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum + 1)));
   }
+
   console.log(
     `Pole deseti čísel mezi 1 a 10 je následující: ${arrRandomNumber}`
   );
@@ -36,7 +37,6 @@ randomNumber();
 Jolanda
 ====================================================================================
 We have these words in an array:
-const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela' 'Jaj boze muj']
 
 Create a function called jolandaSpeaks, which will return random word from jolandaVocabulary.
 Hint:
@@ -52,6 +52,25 @@ console.log(jolandaSpeaks())
 // --> 'Moarolka'
 ...
 */
+const jolandaVocabulary = [
+  "Velky spatny",
+  "Moarolka",
+  "Tady vidim",
+  "Cikanka",
+  "Neprepinejte kanela",
+  "Jaj boze muj",
+];
+
+const jolandaSpeaks = function () {
+  const minValue = 0;
+  const maxValue = jolandaVocabulary.length - 1;
+  return jolandaVocabulary[
+    Math.floor(Math.random() * (maxValue - minValue + 1))
+  ];
+};
+for (let i = 1; i < 100; i++) {
+  console.log(jolandaSpeaks());
+}
 
 /*
 ====================================================================================

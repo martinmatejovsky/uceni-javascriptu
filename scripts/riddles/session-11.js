@@ -76,7 +76,14 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
-
+function jolandaAnswers(inputNumber){
+    if (typeof inputNumber != "number"){
+        inputNumber = 3;
+    }
+    for (let i = 0; i < inputNumber; i++){
+        jolandaSpeaks()
+    }
+}
 
 /*
 ====================================================================================

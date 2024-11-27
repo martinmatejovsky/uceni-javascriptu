@@ -4,13 +4,26 @@ Generate random number
 ====================================================================================
 create a function called randomNumber that will generate random number between 1 - 10
 Hint: use method Math.random() and Math.floor()
-
-function randomNumber() {}
-or
-const randomNumber = function () {}
-or
-const randomNumber = () => {}
 */
+function randomNumberA(max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberA(10)
+
+/*
+or
+*/
+const randomNumberB = function (max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberB(10)
+/*
+or
+*/
+const randomNumberC = (max) => {
+    console.log(Math.floor(Math.random() * max) + 1);    
+}
+randomNumberC(10)
 
 
 

@@ -32,8 +32,7 @@ randomNumberC(10)
 Jolanda
 ====================================================================================
 We have these words in an array:
-const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela' 'Jaj boze muj']
-
+const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj']
 Create a function called jolandaSpeaks, which will return random word from jolandaVocabulary.
 Hint:
 Use the concept from previous riddle on random numbers. But now it will not generate number from
@@ -49,7 +48,11 @@ console.log(jolandaSpeaks())
 ...
 */
 
-
+function jolandaSpeaks() {
+    const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj'];
+    let sizeOfJolandaVocabulary = jolandaVocabulary.length;
+    console.log(jolandaVocabulary[Math.floor(Math.random() * sizeOfJolandaVocabulary)]);
+}
 
 /*
 ====================================================================================

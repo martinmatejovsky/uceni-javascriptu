@@ -51,7 +51,7 @@ console.log(jolandaSpeaks())
 function jolandaSpeaks() {
     const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj'];
     let sizeOfJolandaVocabulary = jolandaVocabulary.length;
-    console.log(jolandaVocabulary[Math.floor(Math.random() * sizeOfJolandaVocabulary)]);
+    return jolandaVocabulary[Math.floor(Math.random() * sizeOfJolandaVocabulary)];
 }
 
 /*
@@ -77,14 +77,16 @@ console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
 function jolandaAnswers(inputNumber){
+    let answer = [];
     if (typeof inputNumber != "number"){
         inputNumber = 3;
     }
     for (let i = 0; i < inputNumber; i++){
-        jolandaSpeaks()
+        answer.push(jolandaSpeaks());
     }
+    console.log(answer);
 }
-
+jolandaAnswers(20)
 /*
 ====================================================================================
 Statistics on Jolanda

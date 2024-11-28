@@ -102,8 +102,33 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
+//bere špatné hodnoty z rozsahu pole
+const jolandaAnswers = function (jolandaAnswersNumber) {
+  const jolandaAnswersArr = [];
+  const maxNum = jolandaAnswersNumber + 1;
+  const minNum = 1;
+  for (let i = 0; i < jolandaAnswersNumber; i++) {
+    jolandaAnswersArr.push(jolandaVocabulary[(Math.floor(Math.random() * (maxNum - minNum) + minNum))]);
+  }
+  console.log(jolandaAnswersArr);
+}
 
+let jolandaAnswersEnter = parseInt(prompt("Zadej číslicí kolik proroctví ti má Jolanda sdělit?"));
 
+if (typeof (jolandaAnswersEnter) !== "number") {
+  jolandaAnswersEnter = 3;
+  console.log("Tobě nebýt rozumět, naučit se česky. Ty dostat " + jolandaAnswersEnter + " odpovědi");
+  jolandaAnswers(jolandaAnswersEnter);
+}
+else if (jolandaAnswersEnter === 0) {
+  jolandaAnswersEnter = 3;
+  console.log("Ty neotravovat Jolanda zbytečně a bo nerozhodný, dostat " + jolandaAnswersEnter + " tři odpovědi!!!");
+  jolandaAnswers(jolandaAnswersEnter);
+}
+else {
+  console.log("tvá věštba být:");
+  jolandaAnswers(jolandaAnswersEnter);
+}
 /*
 ====================================================================================
 Statistics on Jolanda

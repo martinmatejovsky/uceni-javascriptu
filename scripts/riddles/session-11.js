@@ -102,11 +102,11 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
-//bere špatné hodnoty z rozsahu pole
+
 const jolandaAnswers = function (jolandaAnswersNumber) {
   const jolandaAnswersArr = [];
-  const maxNum = jolandaAnswersNumber + 1;
-  const minNum = 1;
+  const maxNum = jolandaVocabulary.length;
+  const minNum = 0;
   for (let i = 0; i < jolandaAnswersNumber; i++) {
     jolandaAnswersArr.push(jolandaVocabulary[(Math.floor(Math.random() * (maxNum - minNum) + minNum))]);
   }

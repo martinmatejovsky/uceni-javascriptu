@@ -1,3 +1,4 @@
+
 /*
 ====================================================================================
 Generate random number
@@ -11,26 +12,34 @@ const randomNumber = function () {}
 or
 const randomNumber = () => {}
 */
+// PRVNÍ ŘEŠENÍ
+const randomNumber0 = () => Math.floor(Math.random() * 10 + 1); // vyhodí číslo mezi 0,0 (včetně) - 1,0 (mimo), to vynásobím 10 => 0,000 - 9,999, přičtu 1 => 1,000 - 10,999 a zaokrouhlím celé dolů : 1,000 - 10,000 
+console.log("Jedno náhodné číslo mezi 1 a 10 (VČETNĚ) je: " + randomNumber0());
+// FUNGUJE   
 
-const randomNumber0 = () => Math.floor(Math.random() * 10); //nefunguje pro nulu a °0
-console.log("Jedno náhodné číslo je: " + randomNumber0());
-
+//DRUHÉ ŘEŠENÍ S ROZMEZÍM, VE KTERÉM SE MAJÍ ČÍSLA VYPISOVAT A BUDOU SE VYPISOVAT DO POLE, PRO PŘEHLEDNOST
 const randomNumber = function () {
-  //   let x = Math.random()
   let minNum = 1;
   let maxNum = 11;
   let arrRandomNumber = [];
   for (let i = 0; i < 10; i++) {
-    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum + 1)));
+    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum) + minNum));
   }
 
   console.log(
     `Pole deseti čísel mezi 1 a 10 je následující: ${arrRandomNumber}`
   );
+  for (let i = 0; i < arrRandomNumber.length - 1; i++) {
+    if (arrRandomNumber[i] === 0 || arrRandomNumber[i] === 11) {
+      console.log("Pozor !!! kod nefunguje !!!");
+    }
+  }
 };
 
-randomNumber();
-randomNumber();
+for (let i = 1; i < 10; i++) {
+  console.log(randomNumber());
+}
+
 
 /*
 ====================================================================================
@@ -52,6 +61,7 @@ console.log(jolandaSpeaks())
 // --> 'Moarolka'
 ...
 */
+console.log("JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOlANDA - JOLANDA");
 const jolandaVocabulary = [
   "Velky spatny",
   "Moarolka",
@@ -64,11 +74,9 @@ const jolandaVocabulary = [
 const jolandaSpeaks = function () {
   const minValue = 0;
   const maxValue = jolandaVocabulary.length - 1;
-  return jolandaVocabulary[
-    Math.floor(Math.random() * (maxValue - minValue + 1))
-  ];
+  return jolandaVocabulary[Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)];
 };
-for (let i = 1; i < 100; i++) {
+for (let i = 1; i < 10; i++) {
   console.log(jolandaSpeaks());
 }
 
@@ -94,6 +102,7 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
+
 
 /*
 ====================================================================================

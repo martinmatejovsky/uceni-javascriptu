@@ -1,12 +1,12 @@
 html {
     padding: 20px;
-    background-color: #dedfe3;
+    background-color: #1d233d;
 }
 
 body {
-    max-width: 800px;
+    max-width: 1300px;
     margin: 20px auto;
-    color: #403e3e;
+    color: #a78383;
     font-family: Arial, sans-serif;
 }
 
@@ -19,9 +19,9 @@ nav ul {
 
 button {
     padding: 8px 16px;
-    background-color: #304080;
+    background-color: #b0b7d3;
     font-size: 18px;
-    color: #fff;
+    color: #16083d;
     border: 0 none;
     border-radius: 8px;
     cursor: pointer;
@@ -29,25 +29,23 @@ button {
 }
 
 button:hover {
-    background-color: #040b2e;
+    background-color: #0d1a50;
 }
 
 @media screen and (min-width: 800px)  {
     h1 {
+        text-align: center;
         font-size: 60px;
+    }
+}
+@media screen and (min-width: 800px)  {
+    p {
+        text-align: center;
+        font-size: 20px;
     }
 }
 .controllers {
     margin: 20px 0;
     display: flex;
     justify-content: center;
-}
-
-#app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    color: #c63535;
-    font-size: 60px;
 }

@@ -107,6 +107,8 @@ console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
 
+console.log("JOLANDA PROPHECY - funguje");
+
 const jolandaAnswers = function (jolandaAnswersNumber) {
   const jolandaAnswersArr = [];
   const maxNum = jolandaVocabulary.length;

@@ -1,4 +1,3 @@
-
 /*
 ====================================================================================
 Generate random number
@@ -13,9 +12,9 @@ or
 const randomNumber = () => {}
 */
 // PRVNÍ ŘEŠENÍ
-const randomNumber0 = () => Math.floor(Math.random() * 10 + 1); // vyhodí číslo mezi 0,0 (včetně) - 1,0 (mimo), to vynásobím 10 => 0,000 - 9,999, přičtu 1 => 1,000 - 10,999 a zaokrouhlím celé dolů : 1,000 - 10,000 
+const randomNumber0 = () => Math.floor(Math.random() * 10 + 1); // vyhodí číslo mezi 0,0 (včetně) - 1,0 (mimo), to vynásobím 10 => 0,000 - 9,999, přičtu 1 => 1,000 - 10,999 a zaokrouhlím celé dolů : 1,000 - 10,000
 console.log("Jedno náhodné číslo mezi 1 a 10 (VČETNĚ) je: " + randomNumber0());
-// FUNGUJE   
+// FUNGUJE
 
 //DRUHÉ ŘEŠENÍ S ROZMEZÍM, VE KTERÉM SE MAJÍ ČÍSLA VYPISOVAT A BUDOU SE VYPISOVAT DO POLE, PRO PŘEHLEDNOST
 const randomNumber = function () {
@@ -23,7 +22,9 @@ const randomNumber = function () {
   let maxNum = 11;
   let arrRandomNumber = [];
   for (let i = 0; i < 10; i++) {
-    arrRandomNumber.push(Math.floor(Math.random() * (maxNum - minNum) + minNum));
+    arrRandomNumber.push(
+      Math.floor(Math.random() * (maxNum - minNum) + minNum)
+    );
   }
 
   console.log(
@@ -39,7 +40,6 @@ const randomNumber = function () {
 for (let i = 1; i < 10; i++) {
   console.log(randomNumber());
 }
-
 
 /*
 ====================================================================================
@@ -61,7 +61,9 @@ console.log(jolandaSpeaks())
 // --> 'Moarolka'
 ...
 */
-console.log("JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOlANDA - JOLANDA");
+console.log(
+  "JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOlANDA - JOLANDA"
+);
 const jolandaVocabulary = [
   "Velky spatny",
   "Moarolka",
@@ -74,7 +76,9 @@ const jolandaVocabulary = [
 const jolandaSpeaks = function () {
   const minValue = 0;
   const maxValue = jolandaVocabulary.length - 1;
-  return jolandaVocabulary[Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)];
+  return jolandaVocabulary[
+    Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+  ];
 };
 for (let i = 1; i < 10; i++) {
   console.log(jolandaSpeaks());
@@ -108,24 +112,38 @@ const jolandaAnswers = function (jolandaAnswersNumber) {
   const maxNum = jolandaVocabulary.length;
   const minNum = 0;
   for (let i = 0; i < jolandaAnswersNumber; i++) {
-    jolandaAnswersArr.push(jolandaVocabulary[(Math.floor(Math.random() * (maxNum - minNum) + minNum))]);
+    jolandaAnswersArr.push(
+      jolandaVocabulary[Math.floor(Math.random() * (maxNum - minNum) + minNum)] //v tomto případě by stačilo *maxNum, protože spodní hranice je 0. Nechávám ale tento zápis, ať mohu příštěnastavit rozmezí čísel.
+    );
   }
   console.log(jolandaAnswersArr);
-}
+};
 
-let jolandaAnswersEnter = parseInt(prompt("Zadej číslicí kolik proroctví ti má Jolanda sdělit?"));
+let jolandaAnswersEnter = parseInt(
+  prompt("Zadej číslicí kolik proroctví ti má Jolanda sdělit?")
+);
+//parse int udělá z jakéhokolik vstupu number??,,, podmínka proto nefunguje, načíst k tomu neco. resp, hodíto NoN, což je pořád číslo řešení je funkce "isNan"
 
-if (typeof (jolandaAnswersEnter) !== "number") {
+console.log(jolandaAnswersEnter);
+
+if (Number.isNaN(jolandaAnswersEnter)) {
+  //number.isNaN posoudí, zda je zadaná hodnota číslo.
   jolandaAnswersEnter = 3;
-  console.log("Tobě nebýt rozumět, naučit se česky. Ty dostat " + jolandaAnswersEnter + " odpovědi");
+  console.log(
+    "Tobě nebýt rozumět, naučit se česky. Ty dostat " +
+      jolandaAnswersEnter +
+      " odpovědi"
+  );
   jolandaAnswers(jolandaAnswersEnter);
-}
-else if (jolandaAnswersEnter === 0) {
+} else if (jolandaAnswersEnter === 0) {
   jolandaAnswersEnter = 3;
-  console.log("Ty neotravovat Jolanda zbytečně a bo nerozhodný, dostat " + jolandaAnswersEnter + " tři odpovědi!!!");
+  console.log(
+    "Ty neotravovat Jolanda zbytečně a bo nerozhodný, dostat " +
+      jolandaAnswersEnter +
+      " tři odpovědi!!!"
+  );
   jolandaAnswers(jolandaAnswersEnter);
-}
-else {
+} else {
   console.log("tvá věštba být:");
   jolandaAnswers(jolandaAnswersEnter);
 }

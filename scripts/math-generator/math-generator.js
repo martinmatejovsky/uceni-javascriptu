@@ -1,3 +1,9 @@
+const buttonStart = document.getElementById("math-start-exercise")
+
+buttonStart.addEventListener('click', () => {
+    randomMathExample()
+})
+
 function randomNumber(max) {
     return Math.floor(Math.random() * max) + 1;
 }
@@ -23,4 +29,3 @@ function randomMathExample() {
         }
     }
 }
-randomMathExample()

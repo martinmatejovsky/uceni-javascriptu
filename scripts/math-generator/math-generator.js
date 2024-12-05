@@ -1,7 +1,8 @@
 const buttonStart = document.getElementById("math-start-exercise")
+const application = document.getElementById("app")
 
 buttonStart.addEventListener('click', () => {
-    randomMathExample()
+    application.innerHTML = randomMathExample()
 })
 
 function randomNumber(max) {
@@ -15,17 +16,17 @@ function randomMathExample() {
     if (mathSign == 3){
         let firstMultipleNumber = randomNumber(10);
         let secondMultipleNumber = randomNumber(10);
-        console.log(firstMultipleNumber + " * " + secondMultipleNumber);
+        return (firstMultipleNumber + " * " + secondMultipleNumber);
     } else {
         let firstNumber = randomNumber(100);
         let secondNumber = randomNumber(100);
         if (mathSign == 1){
-            console.log(firstNumber + " + " + secondNumber);
+            return (firstNumber + " + " + secondNumber);
         } else {
             if (firstNumber < secondNumber){
             secondNumber = firstNumber;
             }
-        console.log(firstNumber + " - " + secondNumber);
+        return (firstNumber + " - " + secondNumber);
         }
     }
 }

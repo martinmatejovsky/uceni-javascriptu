@@ -1,6 +1,11 @@
-const buttonStart = document.getElementById("piano-start-exercise")
+import availableNotes from '../data/musical-notes.js'
 
-buttonStart.addEventListener('click', () => {
-    console.log('application will start now')
-})
+const buttonShowNext = document.getElementById("piano-start-exercise")
+const application = document.getElementById("app")
+
+const buttonScream = () => {
+    application.innerHTML = "C"
+}
+
+buttonShowNext.addEventListener('click', buttonScream)
 

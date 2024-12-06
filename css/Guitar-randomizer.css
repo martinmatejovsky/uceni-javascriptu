@@ -1,14 +1,15 @@
 .controllers {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
+  margin: 20px 0;
+  display: flex;
+  color: #124912;
+  justify-content: center;
 }
 
 #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    color: #124912;
-    font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #124912;
+  font-size: 60px;
 }

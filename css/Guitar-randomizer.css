@@ -10,6 +10,15 @@
   justify-content: center;
   align-items: center;
   margin: 20px 0;
-  color: #124912;
+  color: #ebb811;
   font-size: 60px;
+}
+
+#defining-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    color: #156620;
+    font-size: 20px;
 }

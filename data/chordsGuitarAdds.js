@@ -1,11 +1,11 @@
 const chordsGuitarAdds = [
     {
         "id": "dur",
-        "name": "Dur"
+        "name": "dur"
     },
     {
         "id": "mol",
-        "name": "Mol"
+        "name": "mol"
     },
     {
         "id": "7",
@@ -13,7 +13,7 @@ const chordsGuitarAdds = [
     },
     {
         "id": "maj",
-        "name": "Maj"
+        "name": "maj"
     }
 
 ]

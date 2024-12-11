@@ -9,22 +9,29 @@ const buttonStart = document.getElementById("guitar-start-excercise");
 const application = document.getElementById("app");
 
 // funkce na volání random hodnoty z pole chordsGuitarBasic, které je definováno v chordsGuitar.js
-const callRandomChord = function () {
-  const minValue = 0;
-  const maxValue = chordsGuitarBasic.length - 1;
-  return chordsGuitarBasic[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
-};
+// const callRandomChord = function () {
+//   const minValue = 0;
+//   const maxValue = chordsGuitarBasic.length - 1;
+//   return chordsGuitarBasic[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
+// };
 
-//funkce na volání random hodnotot z pole chordsGuitarAdd
-const callRandomChordAdd = function() {
+// //funkce na volání random hodnotot z pole chordsGuitarAdd
+// const callRandomChordAdd = function() {
+//   const minValue = 0;
+//   const maxValue = chordsGuitarAdds.length - 1;
+//   return chordsGuitarAdds[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
+// }
+
+//souhrrná funkce  na volání random hodnoty z pole 
+const callRandomChord = function(arr) {
   const minValue = 0;
-  const maxValue = chordsGuitarAdds.length - 1;
-  return chordsGuitarAdds[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
+  const maxValue = arr.length - 1;
+  return arr[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
 }
 
 //sloučení obou random hodnot dohromady, tedy námi požadovaný výsledek
 const showRandomResult = function(){
-  application.innerHTML = callRandomChord() + " " + callRandomChordAdd();
+  application.innerHTML = callRandomChord(chordsGuitarBasic) + " " + callRandomChord(chordsGuitarAdds);
 };
 
 // opakování random funkce v časovém intervalu

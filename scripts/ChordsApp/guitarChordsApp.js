@@ -68,3 +68,9 @@ let secondClick = function(){
 buttonStart.addEventListener("click", firstClick);
 
 
+//nahrvání provedených kombinací do pole
+const playedChordsArr = [];
+
+const pushPlayedChordsArr = function(){
+  playedChordsArr.push();
+}

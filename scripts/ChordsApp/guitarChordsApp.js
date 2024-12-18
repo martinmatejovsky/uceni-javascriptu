@@ -7,6 +7,7 @@ import chordsGuitarAdds from "../../data/chordsGuitarAdds.js";
 const buttonStart = document.getElementById("guitar-start-excercise");
 //nastavení prostoru (podle matesa) kde se bude vypisovat výsledek funkce ShowRandomResult, tedy náhodný akord
 const application = document.getElementById("app");
+const playedChordsArr = []; // pole kam se ukládají zobrazené akordy
 
 // funkce na volání random hodnoty z pole chordsGuitarBasic, které je definováno v chordsGuitar.js
 // const callRandomChord = function () {
@@ -37,7 +38,7 @@ const showRandomResult = function () {
 };
 
 const playedChordsPush = function () {
-
+  playedChordsArr.push(randomResultKeeper);
 }
 
 // opakování random funkce v časovém intervalu
@@ -47,7 +48,7 @@ const repeatFunction = function () {
   playedChordsPush();
   if (!intervalID) {
     intervalID = setInterval(showRandomResult, 5000)
-    intervalID = setInterval(console.log("test"), 5000); // bude to takto fungovat? - ano, funguje
+    intervalID = setInterval(playedChordsPush, 5000); // bude to takto fungovat? - ano, funguje - napushování zobrazeného akordu do pole
   }
 }
 //ukončení opakování random funkce
@@ -75,4 +76,4 @@ let secondClick = function () {
 //přiřazení akce po kliknutí na tlačítko
 buttonStart.addEventListener("click", firstClick);
 
-//vytvoření pole, kam se 
+

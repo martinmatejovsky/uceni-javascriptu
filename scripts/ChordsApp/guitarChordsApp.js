@@ -7,21 +7,8 @@ import chordsGuitarAdds from "../../data/chordsGuitarAdds.js";
 const buttonStart = document.getElementById("guitar-start-excercise");
 //nastavení prostoru (podle matesa) kde se bude vypisovat výsledek funkce ShowRandomResult, tedy náhodný akord
 const application = document.getElementById("app");
-const playedChordsArr = []; // pole kam se ukládají zobrazené akordy
+const arrOfPlayedChords = []; // pole kam se ukládají zobrazené akordy
 
-// funkce na volání random hodnoty z pole chordsGuitarBasic, které je definováno v chordsGuitar.js
-// const callRandomChord = function () {
-//   const minValue = 0;
-//   const maxValue = chordsGuitarBasic.length - 1;
-//   return chordsGuitarBasic[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
-// };
-
-// //funkce na volání random hodnotot z pole chordsGuitarAdd
-// const callRandomChordAdd = function() {
-//   const minValue = 0;
-//   const maxValue = chordsGuitarAdds.length - 1;
-//   return chordsGuitarAdds[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
-// }
 
 //souhrrná funkce  na volání random hodnoty z pole 
 const callRandomChord = function (arr) {
@@ -35,26 +22,32 @@ let randomResultKeeper;
 const showRandomResult = function () {
   randomResultKeeper = callRandomChord(chordsGuitarBasic) + " " + callRandomChord(chordsGuitarAdds);
   application.innerHTML = randomResultKeeper;
-};
-
-const playedChordsPush = function () {
-  playedChordsArr.push(randomResultKeeper);
 }
+
+// funkce na napushování randomchordu do array
+const addResultToArr = function(){
+    if(randomResultKeeper) {
+      arrOfPlayedChords.push(randomResultKeeper);
+      }
+  }
 
 // opakování random funkce v časovém intervalu
 let intervalID;
 const repeatFunction = function () {
   showRandomResult();
-  playedChordsPush();
-  if (!intervalID) {
-    intervalID = setInterval(showRandomResult, 5000)
-    intervalID = setInterval(playedChordsPush, 5000); // bude to takto fungovat? - ano, funguje - napushování zobrazeného akordu do pole
+  addResultToArr();
+   if (!intervalID) {
+    intervalID = setInterval(() => {
+      showRandomResult();
+      addResultToArr();
+    }, 2000);
   }
 }
 //ukončení opakování random funkce
 const stopRepeatFunction = function () {
   if (intervalID) {
     clearInterval(intervalID);
+    intervalID = undefined;
   }
 }
 
@@ -71,15 +64,10 @@ let secondClick = function () {
   buttonStart.textContent = "Lets rock";
   buttonStart.removeEventListener("click", secondClick);
   buttonStart.addEventListener("click", firstClick);
+  console.log(arrOfPlayedChords);
 }
 
 //přiřazení akce po kliknutí na tlačítko
 buttonStart.addEventListener("click", firstClick);
 
 
-//nahrvání provedených kombinací do pole
-const playedChordsArr = [];
-
-const pushPlayedChordsArr = function(){
-  playedChordsArr.push();
-}

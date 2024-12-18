@@ -23,48 +23,56 @@ const application = document.getElementById("app");
 // }
 
 //souhrrná funkce  na volání random hodnoty z pole 
-const callRandomChord = function(arr) {
+const callRandomChord = function (arr) {
   const minValue = 0;
   const maxValue = arr.length - 1;
   return arr[Math.floor(Math.random() * (maxValue - minValue + 1))].name;
 }
 
 //sloučení obou random hodnot dohromady, tedy námi požadovaný výsledek
-const showRandomResult = function(){
-  application.innerHTML = callRandomChord(chordsGuitarBasic) + " " + callRandomChord(chordsGuitarAdds);
+let randomResultKeeper;
+const showRandomResult = function () {
+  randomResultKeeper = callRandomChord(chordsGuitarBasic) + " " + callRandomChord(chordsGuitarAdds);
+  application.innerHTML = randomResultKeeper;
 };
+
+const playedChordsPush = function () {
+
+}
 
 // opakování random funkce v časovém intervalu
 let intervalID;
-const repeatFunction = function(){
+const repeatFunction = function () {
   showRandomResult();
-  if (!intervalID){
-    intervalID = setInterval(showRandomResult, 5000);
+  playedChordsPush();
+  if (!intervalID) {
+    intervalID = setInterval(showRandomResult, 5000)
+    intervalID = setInterval(console.log("test"), 5000); // bude to takto fungovat? - ano, funguje
   }
 }
 //ukončení opakování random funkce
-const stopRepeatFunction = function(){
+const stopRepeatFunction = function () {
   if (intervalID) {
     clearInterval(intervalID);
   }
 }
 
 //změna funkce tlačítka guitar-sart-excercise - snaha o změnu po kliknutí - Start-Stop
-let firstClick = function(){
+let firstClick = function () {
   repeatFunction();
   buttonStart.removeEventListener("click", firstClick);
   buttonStart.textContent = "STOP the ROCK!!!";
   buttonStart.addEventListener("click", secondClick);
-  }
-  
-let secondClick = function(){
+}
+
+let secondClick = function () {
   stopRepeatFunction();
   buttonStart.textContent = "Lets rock";
   buttonStart.removeEventListener("click", secondClick);
   buttonStart.addEventListener("click", firstClick);
-  }
+}
 
 //přiřazení akce po kliknutí na tlačítko
 buttonStart.addEventListener("click", firstClick);
 
-
+//vytvoření pole, kam se 

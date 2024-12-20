@@ -133,16 +133,16 @@ if (Number.isNaN(jolandaAnswersEnter)) {
   jolandaAnswersEnter = 3;
   console.log(
     "Tobě nebýt rozumět, naučit se česky. Ty dostat " +
-      jolandaAnswersEnter +
-      " odpovědi"
+    jolandaAnswersEnter +
+    " odpovědi"
   );
   jolandaAnswers(jolandaAnswersEnter);
 } else if (jolandaAnswersEnter === 0) {
   jolandaAnswersEnter = 3;
   console.log(
     "Ty neotravovat Jolanda zbytečně a bo nerozhodný, dostat " +
-      jolandaAnswersEnter +
-      " tři odpovědi!!!"
+    jolandaAnswersEnter +
+    " tři odpovědi!!!"
   );
   jolandaAnswers(jolandaAnswersEnter);
 } else {
@@ -189,3 +189,31 @@ complicated way you currently learned
 
 
 */
+//jolandaAnswersArr - mám pole s proběhlými odpovědmi
+*/
+
+console.log("Statistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on Jolanda");
+
+//classa pro vytvoření objektu
+class JolandaAnswer {
+  constructor(word, frequency) {
+    this.autor = "Jolanda"
+    this.word = word
+    this.frequency = frequency
+  }
+}
+for (i = 0, i < jolandaAnswersArr.length - 1, i++) {
+  if (jolandaAnswersArr[i] == word.map.word) {
+    word.map.frequency = word.map.frequency++;
+  }
+
+}
+let word = new JolandaAnswer(jolandaAnswersArr[0], 2);
+let word2 = new JolandaAnswer("slovosssss", 3);
+
+
+console.log(word, word2);
+
+const JolandaFrequency = function () {
+
+}

@@ -190,30 +190,33 @@ complicated way you currently learned
 
 */
 //jolandaAnswersArr - mám pole s proběhlými odpovědmi
-*/
+
 
 console.log("Statistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on JolandaStatistics on Jolanda");
 
+
 //classa pro vytvoření objektu
-class JolandaAnswer {
+class JolandaAnswerObj {
   constructor(word, frequency) {
     this.autor = "Jolanda"
     this.word = word
     this.frequency = frequency
   }
 }
-for (i = 0, i < jolandaAnswersArr.length - 1, i++) {
-  if (jolandaAnswersArr[i] == word.map.word) {
-    word.map.frequency = word.map.frequency++;
-  }
 
+// Funkce pro analýzu frekvence slov
+function jolandaFrequency() {
+    const frequencyMap = {};
+
+    // Počítáme četnost jednotlivých slov
+    jolandaAnswersArr.forEach(word => {
+        frequencyMap[word] = (frequencyMap[word] || 0) + 1;
+    });
+
+    console.log(frequencyMap);
+    // // Převádíme frekvenci do pole objektů
+    const frequencyArray = Object.entries(frequencyMap).map(([word, frequency]) => new JolandaAnswerObj(word, frequency));
+        
+    return frequencyArray;
 }
-let word = new JolandaAnswer(jolandaAnswersArr[0], 2);
-let word2 = new JolandaAnswer("slovosssss", 3);
-
-
-console.log(word, word2);
-
-const JolandaFrequency = function () {
-
-}
+console.log(jolandaFrequency());

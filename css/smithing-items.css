@@ -6,13 +6,13 @@
 
 html {
     padding: 20px;
-    background-color: #1d233d;
+    background-color: #463a26b6;
 }
 
 body {
     max-width: 1300px;
     margin: 20px auto;
-    color: #a78383;
+    color: #251515;
     font-family: Arial, sans-serif;
 }
 
@@ -24,16 +24,16 @@ nav ul {
 }
 
 button {
-    padding: 8px 25px;
-    background-color: #b0b7d3;
-    font-size: 25px;
+    padding: 8px 20px;
+    background-color: #304080;
+    font-size: 20px;
     font-family: serif;
-    color: #16083d;
+    color: #fff;
     border: 0 none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 150px;
+/*    margin-top: 150px;    */
 }
 
 button:hover {
@@ -47,11 +47,17 @@ button:hover {
         font-family: serif;
         box-shadow: 15px 5px 15px 15px #644f4f;
         text-shadow: 5px 5px 5px#4b3e3e;
-        padding: 15px;
-        margin: 30px 150px;
+
+        margin: 30px auto;
  /*       width: 1000px; */
     }
 }
+
+h3 {
+    width: 250px; 
+    padding: 15px;
+}
+
 @media screen and (min-width: 800px)  {
     p {
         text-align: center;
@@ -65,11 +71,26 @@ button:hover {
     justify-content: center;
 }
 
-#app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    color: #c63535;
-    font-size: 60px;
+img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.display {
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto;
+    padding: 22px;
+}
+
+.header {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.productCounter__input {
+    text-align: center;
+    font-size: 15px;
+    width: 40px;
+    height: auto;
 }

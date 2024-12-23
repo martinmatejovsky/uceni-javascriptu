@@ -65,9 +65,34 @@ let secondClick = function () {
   buttonStart.removeEventListener("click", secondClick);
   buttonStart.addEventListener("click", firstClick);
   console.log(arrOfPlayedChords);
+  console.log(frequencyOfWiewedChords());
 }
 
 //přiřazení akce po kliknutí na tlačítko
 buttonStart.addEventListener("click", firstClick);
+
+//vytvoření třídy pro tvorbu zobazených akordů
+class CreateChordObj {
+  constructor(chord, frequency) {
+    this.autor = "Guitar Chord Application"
+    this.chord = chord
+    this.frequency = frequency
+  }
+}
+
+//funkce na evidenci zobrazených akordů
+function frequencyOfWiewedChords() {
+  const frequencyMap = {};
+
+  // Počítáme četnost jednotlivých slov
+  arrOfPlayedChords.forEach(word => {
+      frequencyMap[word] = (frequencyMap[word] || 0) + 1;
+  });
+
+    // // Převádíme frekvenci do pole objektů
+  const frequencyArray = Object.entries(frequencyMap).map(([chord, frequency]) => new CreateChordObj(chord, frequency));
+      
+  return frequencyArray;
+}
 
 

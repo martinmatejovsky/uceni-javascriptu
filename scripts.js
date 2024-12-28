@@ -61,7 +61,7 @@ function initCounters(){
                 inputValue.value = counterInputAmount + 1;
             }
         }
-        function decrementation() {                    //funkce definovana jako increment
+        function decrementation() {                    //funkce definovana jako decrement
             let counterInputAmount = Number(inputValue.value)
             if (isNaN(counterInputAmount)) {           //overi zda je nebo neni promenna NaN (true / false)
                 inputValue.value = 0

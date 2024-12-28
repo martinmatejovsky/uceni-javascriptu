@@ -4,13 +4,26 @@ Generate random number
 ====================================================================================
 create a function called randomNumber that will generate random number between 1 - 10
 Hint: use method Math.random() and Math.floor()
-
-function randomNumber() {}
-or
-const randomNumber = function () {}
-or
-const randomNumber = () => {}
 */
+function randomNumberA(max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberA(10)
+
+/*
+or
+*/
+const randomNumberB = function (max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberB(10)
+/*
+or
+*/
+const randomNumberC = (max) => {
+    console.log(Math.floor(Math.random() * max) + 1);    
+}
+randomNumberC(10)
 
 
 
@@ -19,8 +32,7 @@ const randomNumber = () => {}
 Jolanda
 ====================================================================================
 We have these words in an array:
-const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela' 'Jaj boze muj']
-
+const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj']
 Create a function called jolandaSpeaks, which will return random word from jolandaVocabulary.
 Hint:
 Use the concept from previous riddle on random numbers. But now it will not generate number from
@@ -36,7 +48,11 @@ console.log(jolandaSpeaks())
 ...
 */
 
-
+function jolandaSpeaks() {
+    const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj'];
+    let sizeOfJolandaVocabulary = jolandaVocabulary.length;
+    return jolandaVocabulary[Math.floor(Math.random() * sizeOfJolandaVocabulary)];
+}
 
 /*
 ====================================================================================
@@ -60,8 +76,17 @@ console.log(jolandaAnswers(2))
 console.log(jolandaSpeaks())
 // --> ['Moarolka', Neprepinejte kanela', 'Cikanka']
 */
-
-
+function jolandaAnswers(inputNumber){
+    let answer = [];
+    if (typeof inputNumber != "number"){
+        inputNumber = 3;
+    }
+    for (let i = 0; i < inputNumber; i++){
+        answer.push(jolandaSpeaks());
+    }
+    console.log(answer);
+}
+jolandaAnswers(20)
 /*
 ====================================================================================
 Statistics on Jolanda

@@ -7,6 +7,7 @@ import chordsGuitarAdds from "../../data/chordsGuitarAdds.js";
 const buttonStart = document.getElementById("guitar-start-excercise");
 //nastavení prostoru (podle matesa) kde se bude vypisovat výsledek funkce ShowRandomResult, tedy náhodný akord
 const application = document.getElementById("app");
+const playedChords = document.getElementById("playedChords")
 const arrOfPlayedChords = []; // pole kam se ukládají zobrazené akordy
 
 
@@ -72,7 +73,7 @@ let secondClick = function () {
 buttonStart.addEventListener("click", firstClick);
 
 //vytvoření třídy pro tvorbu zobazených akordů
-class CreateChordObj {
+class PlayedChords {
   constructor(chord, frequency) {
     this.autor = "Guitar Chord Application"
     this.chord = chord
@@ -84,14 +85,20 @@ class CreateChordObj {
 function frequencyOfWiewedChords() {
   const frequencyMap = {};
 
-  // Počítáme četnost jednotlivých slov
+  // Počítáme četnost jednotlivých slov - tohle už bylo s nápovědou chatbota
   arrOfPlayedChords.forEach(word => {
       frequencyMap[word] = (frequencyMap[word] || 0) + 1;
   });
 
-    // // Převádíme frekvenci do pole objektů
-  const frequencyArray = Object.entries(frequencyMap).map(([chord, frequency]) => new CreateChordObj(chord, frequency));
-      
+    // Převádíme frekvenci do pole objektů
+  const frequencyArray = Object.entries(frequencyMap).map(([chord, frequency]) => new PlayedChords(chord, frequency));
+  
+  playedChords.innerHTML = ""; // Vyčistit předchozí obsah
+  frequencyArray.forEach(item => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${item.chord}: ${item.frequency}x`;
+    playedChords.appendChild(listItem);
+  });
   return frequencyArray;
 }
 

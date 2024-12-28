@@ -1,5 +1,5 @@
 
-//counterForgedIncrement.addEventListener('click', () => {                        //anonymni fce v sipkovem zpisu
+// counterForgedIncrement.addEventListener('click', () => {                        //anonymni fce v sipkovem zpisu
 //    counterForgedInput.value = parseInt(counterForgedInput.value) + 1;
 //});
 

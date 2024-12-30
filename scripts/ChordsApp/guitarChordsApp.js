@@ -53,24 +53,24 @@ const stopRepeatFunction = function () {
 }
 
 //změna funkce tlačítka guitar-sart-excercise - snaha o změnu po kliknutí - Start-Stop
-let firstClick = function () {
+let clickStart = function () {
   repeatFunction();
-  buttonStart.removeEventListener("click", firstClick);
+  buttonStart.removeEventListener("click", clickStart);
   buttonStart.textContent = "STOP the ROCK!!!";
-  buttonStart.addEventListener("click", secondClick);
+  buttonStart.addEventListener("click", clickStop);
 }
 
-let secondClick = function () {
+let clickStop = function () {
   stopRepeatFunction();
   buttonStart.textContent = "Lets rock";
-  buttonStart.removeEventListener("click", secondClick);
-  buttonStart.addEventListener("click", firstClick);
+  buttonStart.removeEventListener("click", clickStop);
+  buttonStart.addEventListener("click", clickStart);
   console.log(arrOfPlayedChords);
   console.log(frequencyOfWiewedChords());
 }
 
 //přiřazení akce po kliknutí na tlačítko
-buttonStart.addEventListener("click", firstClick);
+buttonStart.addEventListener("click", clickStart);
 
 //vytvoření třídy pro tvorbu zobazených akordů
 class PlayedChords {

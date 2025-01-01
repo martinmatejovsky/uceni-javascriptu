@@ -21,6 +21,11 @@ let abc = "abc";
 console.log(abc.length);
 // → 3
 */
+let a = "#"
+let result = ""
+for (let i = 0; i < 8; i++ , result = result + a){
+    console.log(result);
+}
 
 
 /*
@@ -36,7 +41,17 @@ When you have that working, modify your program to print "FizzBuzz" for numbers 
 (This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. 
 So if you solved it, your labor market value just went up.)
 */
-
+for (let i = 1; i <= 100; i++){
+    if (i % 3 == 0 && i % 5 == 0){
+        console.log("FizzBuz");
+    } else if (i % 3 == 0){
+        console.log("Fizz");
+    } else if (i % 5 == 0){
+        console.log("Buz ");
+    } else {
+        console.log(`${i}`);
+    }
+}
 
 /*
 ====================================================================================
@@ -58,8 +73,22 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a binding size = 8 and change the program so that it 
 works for any size, outputting a grid of the given width and height.
 */
-
-
+const chessBoard = function (width,height){
+let i;
+let j;
+for (i = 0; i < height; i++){
+    let line = "";
+    for (j = 0; j < width; j++){
+        if ((i + j) % 2 == 0){
+            line = line + " "
+        } else {
+            line = line + "#"
+        }
+        }
+        console.log(line)
+    }
+}
+chessBoard (8,2)
 
 /*
 ====================================================================================
@@ -67,8 +96,15 @@ works for any size, outputting a grid of the given width and height.
 ====================================================================================
 Napiš funkci, která přijme pole čísel a vrátí největší číslo.
 */
-let randomNumbers = [2, 2, 8, 123, 1, -1]
-
+let randomNumbers = [2, 2, 8, 123, 1, -1];
+let max = randomNumbers[0];
+let size = randomNumbers.length;
+for(let i = 1; i < size; i++){
+    if (max <= randomNumbers[i]){
+        max = randomNumbers[i];
+    } 
+}
+console.log(max);
 
 
 /*
@@ -78,10 +114,18 @@ let randomNumbers = [2, 2, 8, 123, 1, -1]
 Napiš funkci, která vytvoří nové pole (treba jmenem badGrades), ve kterém budou jen ta čísla, co jsou větší než 3.
 Jako vstup si vezmeme proměnnou znamkyVeSkole
 */
-let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2]
-
-
-
+let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2];
+const badGrades = function (gradesAtSchool){
+    let size1 = gradesAtSchool.length;
+    let bGrades = [];
+    for (let i = 0; i < size1; i++){
+        if (gradesAtSchool[i] > 3){
+            bGrades.push(gradesAtSchool[i]);
+        }
+    }
+    console.log(bGrades);
+}
+badGrades(gradesAtSchool)
 /*
 ====================================================================================
 # Hrdinové socialistické práce 1
@@ -89,8 +133,20 @@ let gradesAtSchool = [1, 5, 5, 4, 5, 2, 1, 1, 1, 2]
 Napište funkci, která vrátí textovou větu začínající "Mí hrdinové jsou " a pak vypsaná jména z pole "heroes" oddělená čárkou.
 Jména se samozřejmě budou brát postupně z pole "heroes".
 */
-let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
-
+let heroesSimple = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
+const myHerosSimple = function (heroesSimple){
+    let initPart = "Mí hrdinové jsou ";
+    let size2 = heroesSimple.length;
+    for (let i = 0; i < size2; i++){
+        if (i < size2 - 1){
+            initPart = initPart + heroesSimple[i] + ", ";
+        } else {
+            initPart = initPart + heroesSimple[i];
+        }
+    }
+    console.log(initPart)
+}
+myHerosSimple(heroesSimple)
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot, Brežněv"
 
 
@@ -104,10 +160,24 @@ přičemž před posledním jménem nebude čárka, ale "a". Jména se samozřej
 Nápověda: počet položek v poli zjistíte přes vlastnost (property) jménem .length.
 heroes.length // napise 4
 */
-let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"]
+let heroesComplex = ["Mao Ce Tung", "Pol Pot", "Brežněv"];
+const myHerosComplex = function (heroesComplex){
+    let initPart = "Mí hrdinové jsou ";
+    let size2 = heroesComplex.length;
+    for (let i = 0; i < size2; i++){
+        if (i < size2 - 2){
+            initPart = initPart + heroesComplex[i] + ", ";
+        } else if(i < size2 - 1){
+            initPart = initPart + heroesComplex[i];
+        }else {
+            initPart = initPart + " a " + heroesComplex[i];
+        }
+    }
+    console.log(initPart)
+}
+myHerosComplex(heroesComplex)
 
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
-
 
 
 /*
@@ -120,7 +190,29 @@ Nápověda: operátor typeof. Jeden z tzv. unárních operátorů, protože oper
 operátor, jako třeba plus, potřebuje dvě hodnoty, 1 + 1
 */
 let heroesToCheck = ["Mao Ce Tung", "Pol Pot", 0o7, "Brežněv"]
-
+const myHerosToCheck = function (heroesToCheck){
+    let initPart = "Mí hrdinové jsou ";
+    let size3 = heroesToCheck.length;
+    let newHeroes = [];
+    for (let i = 0; i < size3; i++){
+        let checkString = typeof heroesToCheck[i];
+        if (checkString == "string"){
+            newHeroes.push(heroesToCheck[i]);
+        }
+    }
+    let size4 = newHeroes.length;
+    for (let i = 0; i < size4; i++){
+        if (i < size4 - 2){
+            initPart = initPart + newHeroes[i] + ", ";
+        } else if(i < size4 - 1){
+            initPart = initPart + newHeroes[i];
+        }else {
+            initPart = initPart + " a " + newHeroes[i];
+        }
+    }    
+    console.log(initPart)
+}
+myHerosToCheck(heroesToCheck)
 // očekávaný výsledek: "Mí hrdinové jsou Mao Ce Tung, Pol Pot a Brežněv"
 
 
@@ -136,9 +228,34 @@ král objednat hru o čtyřech polích.
 Napište funkci, která bude přijímat jeden parametr, a sice číslo, kolik polí daná desková hra má. Pak vypočti, kolik zrnek rýže bude na 
 POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by bylo na posledním poli, pokud by šachy byly jen o 9 polích.
 */
+const revardOnLastFieldOfSquereBoard = function (SquereBoard){
+    if (SquereBoard == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    }
+    let finalRevard = 2;
+    for (let i = 3; i <= SquereBoard * SquereBoard; i++){
+        finalRevard = finalRevard * 2;
+    }
+    console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
+}
+revardOnLastFieldOfSquereBoard(2)
 
-
-
+const revardOnLastField = function (Field){
+    if (Field == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    } else if (Field == 2){
+        console.log("Na druhem poli jsou 2 zrnka ryze.");
+        return
+    }
+    let finalRevard = 2;
+    for (let i = 3; i <= Field; i++){
+        finalRevard = finalRevard * 2;
+    }
+    console.log("Na posledním poli je " + finalRevard + " zrnkek ryze.");
+}
+revardOnLastField(9)
 /*
 ====================================================================================
 # Opravdová dměna pro vynálezce šachů
@@ -146,7 +263,38 @@ POSLEDNÍM poli deskové hry. Takže si můžeme vypočítat, kolik zrnek by byl
 Viz předchozí úloha. Nyní se ale zajímáme o to, kolik zrnek rýže vlastně mělo být rozdáno celkem na všech polích dohromady, 
 ne jen kolik to vychází na poslední pole.
 */
+const revardSumOnSquereField = function (SquereBoard){
+    if (SquereBoard == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    }
+    let midleRevard = 2;
+    let finalRevard = 3;
+    for (let i = 3; i <= SquereBoard * SquereBoard; i++){
+        midleRevard = midleRevard * 2;
+        finalRevard = midleRevard + finalRevard;
+    }
+    console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
+}
+revardSumOnSquereField(9)
 
+const revardSum = function (Field){
+    if (Field == 1){
+        console.log("Na poli je 1 zrnko ryze.");
+        return
+    } else if (Field == 2){
+        console.log("Odmena celkem je 3 zrnka ryze.");
+        return
+    }
+    let midleRevard = 2;
+    let finalRevard = 3;
+    for (let i = 3; i <= Field; i++){
+        midleRevard = midleRevard * 2;
+        finalRevard = midleRevard + finalRevard;
+    }
+    console.log("Odmena celkem je " + finalRevard + " zrnkek ryze.");
+}
+revardSum(9)
 
 /*
 ====================================================================================
@@ -157,3 +305,9 @@ Napište funkci, která přijme jako svůj jediný parametr číslo, které vyja
 je to ovčích měchýřů a žížal.
 Příklad: 15 žížal --> 2 měchýře a 1 žížala.
 */
+const mechyreAzizaly = function (insertNumber){
+    let zizaly = insertNumber % 7;
+    let mechyre = Math.floor(insertNumber / 7);
+    console.log(insertNumber + " je " + mechyre + " mechyru a " + zizaly + " zizal");
+}
+mechyreAzizaly(15)

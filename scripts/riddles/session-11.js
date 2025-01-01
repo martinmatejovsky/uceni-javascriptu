@@ -4,13 +4,27 @@ Generate random number
 ====================================================================================
 create a function called randomNumber that will generate random number between 1 - 10
 Hint: use method Math.random() and Math.floor()
-
-function randomNumber() {}
-or
-const randomNumber = function () {}
-or
-const randomNumber = () => {}
 */
+function randomNumberA(max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberA(10)
+
+/*
+or
+*/
+const randomNumberB = function (max) {
+    console.log(Math.floor(Math.random() * max) + 1);
+}
+randomNumberB(10)
+/*
+or
+*/
+const randomNumberC = (max) => {
+    console.log(Math.floor(Math.random() * max) + 1);    
+}
+randomNumberC(10)
+
 // PRVNÍ ŘEŠENÍ
 const randomNumber0 = () => Math.floor(Math.random() * 10 + 1); // vyhodí číslo mezi 0,0 (včetně) - 1,0 (mimo), to vynásobím 10 => 0,000 - 9,999, přičtu 1 => 1,000 - 10,999 a zaokrouhlím celé dolů : 1,000 - 10,000
 console.log("Jedno náhodné číslo mezi 1 a 10 (VČETNĚ) je: " + randomNumber0());
@@ -47,6 +61,8 @@ Jolanda
 ====================================================================================
 We have these words in an array:
 
+const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj']
+
 Create a function called jolandaSpeaks, which will return random word from jolandaVocabulary.
 Hint:
 Use the concept from previous riddle on random numbers. But now it will not generate number from
@@ -61,6 +77,7 @@ console.log(jolandaSpeaks())
 // --> 'Moarolka'
 ...
 */
+
 console.log(
   "JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOLANDA - JOlANDA - JOLANDA"
 );
@@ -84,6 +101,14 @@ for (let i = 1; i < 10; i++) {
   console.log(jolandaSpeaks());
 }
 
+/* OR
+* function jolandaSpeaks() {
+*    const jolandaVocabulary = ['Velky spatny', 'Moarolka', 'Tady vidim', 'Cikanka', 'Neprepinejte kanela', 'Jaj boze muj'];
+*    let sizeOfJolandaVocabulary = jolandaVocabulary.length;
+*    return jolandaVocabulary[Math.floor(Math.random() * sizeOfJolandaVocabulary)];
+*}
+*/
+  
 /*
 ====================================================================================
 Jolanda's prophecy
@@ -149,6 +174,19 @@ if (Number.isNaN(jolandaAnswersEnter)) {
   console.log("tvá věštba být:");
   jolandaAnswers(jolandaAnswersEnter);
 }
+
+function jolandaAnswers(inputNumber){
+    let answer = [];
+    if (typeof inputNumber != "number"){
+        inputNumber = 3;
+    }
+    for (let i = 0; i < inputNumber; i++){
+        answer.push(jolandaSpeaks());
+    }
+    console.log(answer);
+}
+jolandaAnswers(20)
+
 /*
 ====================================================================================
 Statistics on Jolanda

@@ -1,3 +1,42 @@
+html {
+    padding: 20px;
+    background-color: #dedfe3;
+}
+
+body {
+    max-width: 800px;
+    margin: 20px auto;
+    color: #403e3e;
+    font-family: Arial, sans-serif;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #304080;
+    font-size: 18px;
+    color: #fff;
+    border: 0 none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #040b2e;
+}
+
+@media screen and (min-width: 800px)  {
+    h1 {
+        font-size: 60px;
+    }
+}
 .controllers {
     margin: 20px 0;
     display: flex;

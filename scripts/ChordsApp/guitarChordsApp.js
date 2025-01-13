@@ -7,9 +7,9 @@ import chordsGuitarAdds from "../../data/chordsGuitarAdds.js";
 const buttonStart = document.getElementById("guitar-start-excercise");
 //nastavení prostoru (podle matesa) kde se bude vypisovat výsledek funkce ShowRandomResult, tedy náhodný akord
 const application = document.getElementById("app");
-const playedChords = document.getElementById("playedChords")
+const playedChords = document.getElementById("playedChords");
 const arrOfPlayedChords = []; // pole kam se ukládají zobrazené akordy
-
+const pictureOfChord = document.getElementById("pictureOfChord"); // pro zobrazení obrázku
 
 //souhrrná funkce  na volání random hodnoty z pole 
 const callRandomChord = function (arr) {
@@ -23,6 +23,15 @@ let randomResultKeeper;
 const showRandomResult = function () {
   randomResultKeeper = callRandomChord(chordsGuitarBasic) + " " + callRandomChord(chordsGuitarAdds);
   application.innerHTML = randomResultKeeper;
+  pictureOfChord.innerHTML ="Zde se zobrazí grafické znázornění akordu: ";
+}
+
+// funkce na zobrazení obrázku - akordu - v návaznosti na náhodně vytvořený akord
+let chordPicturePrint = function(){
+let chordPicture = document.createElement("img");
+  chordPicture.src = "../../images/GuitarChordsImages/" + randomResultKeeper + ".png";
+  chordPicture.alt = "Akord " + randomResultKeeper;
+pictureOfChord.appendChild(chordPicture);   
 }
 
 // funkce na napushování randomchordu do array
@@ -37,11 +46,18 @@ let intervalID;
 const repeatFunction = function () {
   showRandomResult();
   addResultToArr();
+  setTimeout(() => {
+    chordPicturePrint();
+  }, 5000);
    if (!intervalID) {
     intervalID = setInterval(() => {
       showRandomResult();
       addResultToArr();
-    }, 2000);
+      
+      setTimeout(() => { //spustení funkce print 5 sekund po funkci showrandomresult
+        chordPicturePrint();
+      }, 5000);
+    }, 10000);
   }
 }
 //ukončení opakování random funkce
@@ -94,9 +110,10 @@ function frequencyOfWiewedChords() {
   const frequencyArray = Object.entries(frequencyMap).map(([chord, frequency]) => new PlayedChords(chord, frequency));
   
   playedChords.innerHTML = ""; // Vyčistit předchozí obsah
-  frequencyArray.forEach(item => {
+  playedChords.innerHTML = "Statistika zobrazených akordů: "
+    frequencyArray.forEach(item => {
     const listItem = document.createElement("li");
-    listItem.textContent = `${item.chord}: ${item.frequency}x`;
+    listItem.textContent = item.chord + ":  " + item.frequency + "x";
     playedChords.appendChild(listItem);
   });
   return frequencyArray;

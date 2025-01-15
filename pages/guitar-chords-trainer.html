@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guitar chord trainer</title>
     <link rel="stylesheet" href="../css/general-style.css" />
     <link rel="stylesheet" href="../css/Guitar-randomizer.css" />
@@ -10,45 +10,49 @@
 
   <body>
     <header>
-      <h1>Chords training web !</h1>
+      <h1>Guitar chords training web !</h1>
     </header>
 
-    <main>
+    <main class="text-normal">
       <p id="defining-text">
         Random chords will be displayed for limited time. Play them before
         they're gone. If you don't know how, wait for sollution ;)
       </p>
 
-      
-    
       <div class="controllers">
         <button id="guitar-start-excercise" type="button">Lets rock</button>
       </div>
-    
-      <section id="app">
-      </section>
 
-      
-    <section id="pictureOfChord">
-      <br>
-      <br>
-    </section>
-    
-    <br>
-    <br>
+      <section id="app"></section>
 
-      <section id="playedChords">
-      </section>
+      <p id="countdown-text">
+        Chord will be displayed in ..<span id="countdown"></span>.. seconds !!!
+      </p>
+
+      <div class="pictures">
+        <div id="pictureOfChord"></div>
+      </div>
+
+      <div class="controllers">
+        <!-- spustí zobrazení následující sekce -->
+        <button id="buttonOfPlayedChords" type="button">
+          Show played chords
+        </button>
+      </div>
+
+      <section id="playedChords"></section>
     </main>
-    <br>
 
-    <footer>
+    <footer class="text-footer">
       <p>
-      Created by Foldas, all rights reseved...Zápatí dokumentu pro přpadné doplnění v budoucnu...
+        Created by Foldas, all rights reseved...Zápatí dokumentu pro přpadné
+        doplnění v budoucnu...
       </p>
     </footer>
-  
-    <script src="../scripts/ChordsApp/guitarChordsApp.js" type="module"></script>
-  
+
+    <script
+      src="../scripts/ChordsApp/guitarChordsApp.js"
+      type="module"
+    ></script>
   </body>
 </html>

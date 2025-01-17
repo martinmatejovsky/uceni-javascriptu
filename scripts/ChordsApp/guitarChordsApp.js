@@ -50,33 +50,61 @@ const addResultToArr = function () {
 };
 
 //funkce na odpočítávání času zobrazneí akordu
-let countdownInterval;
-const countdownFunctionStart = function () {
+let countdownIntervalPictureDisplay;
+const startCountdownPictureDisplay = function (message) {
   let countdownNumber = 5;
-  countdown.textContent = countdownNumber;
+  countdown.textContent = message + countdownNumber + " seconds !";
 
-  countdownInterval = setInterval(() => {
+  countdownIntervalPictureDisplay = setInterval(() => {
     countdownNumber--;
-    countdown.textContent = countdownNumber;
+    countdown.textContent = message + countdownNumber + " seconds !";
 
     if (countdownNumber <= 0) {
-      clearInterval(countdownInterval);
+      clearInterval(countdownIntervalPictureDisplay);
+      countdownIntervalPictureDisplay = null;
     }
   }, 1000);
 };
 
+let countdownIntervalPictureRemove;
+const startCountdownPictureRemove = function (message) {
+  let countdownNumber = 5;
+  if (countdown.textContent == "") {
+
+  }
+  else {
+    countdown.textContent = message + countdownNumber + " seconds !";
+
+    countdownIntervalPictureRemove = setInterval(() => {
+      countdownNumber--;
+      countdown.textContent = message + countdownNumber + " seconds !";
+
+      if (countdownNumber <= 1) {
+        clearInterval(countdownIntervalPictureRemove);
+        countdownIntervalPictureRemove = null;
+      }
+    }, 1000);
+  };
+};
+
 //funkce na zastavení odpočítávání času
 const countdownFunctionStop = function () {
-  clearInterval(countdownInterval);
+  clearInterval(countdownIntervalPictureDisplay);
+  clearInterval(countdownIntervalPictureRemove);
   countdown.textContent = "";
+
 };
 
 // opakování random funkce v časovém intervalu
 let intervalID;
 const repeatFunction = function () {
   showRandomResult();
-  countdownFunctionStart();
   addResultToArr();
+  startCountdownPictureDisplay("Picture will be displayed in ");
+  setTimeout(() => {
+    //spustení funkce  5 sekund po funkci showrandomresult
+    startCountdownPictureRemove("Picture will dissapear in ");
+  }, 5000);
   setTimeout(() => {
     chordPicturePrint();
   }, 5000);
@@ -84,9 +112,12 @@ const repeatFunction = function () {
   if (!intervalID) {
     intervalID = setInterval(() => {
       showRandomResult();
-      countdownFunctionStart();
       addResultToArr();
-
+      startCountdownPictureDisplay("Picture will be displayed in ");
+      setTimeout(() => {
+        //spustení funkce  5 sekund po funkci showrandomresult
+        startCountdownPictureRemove("Picture will dissapear in ");
+      }, 5000);
       setTimeout(() => {
         //spustení funkce print 5 sekund po funkci showrandomresult
         chordPicturePrint();
@@ -102,6 +133,7 @@ const stopRepeatFunction = function () {
     intervalID = undefined;
   }
   chordPicturePrint();
+  countdownFunctionStop();
 };
 
 //změna funkce tlačítka guitar-sart-excercise - snaha o změnu po kliknutí - Start-Stop
@@ -114,7 +146,6 @@ let clickStart = function () {
 
 let clickStop = function () {
   stopRepeatFunction();
-  countdownFunctionStop();
   buttonStart.textContent = "Lets rock";
   buttonStart.removeEventListener("click", clickStop);
   buttonStart.addEventListener("click", clickStart);

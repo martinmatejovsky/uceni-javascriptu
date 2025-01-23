@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/math-randomizer.css">
+</head>
+<body>
+    <h2>Please select only one from the math options and number of examples. Than click on start button.</h2>
+    <form action="">
+        <select name="Addition to 100" id="addition-hundret">
+            <option value="0">Addition to 100</option>
+            <option value="1">To 10 plus 1</option>
+            <option value="2">To 10 plus 2</option>
+            <option value="3">To 10</option>
+            <option value="4">To 100 plus 1 - 10</option>
+            <option value="5">To 100 plus tens</option>
+            <option value="6">To 100 plus any numbers</option>
+        </select>
+        <select name="Addition up to 100" id="addition-up-to-hundret">
+            <option value="0">Addition up to 100</option>
+            <option value="1">Up to 100 plus 1 - 10</option>
+            <option value="2">Up to 100 plus tens</option>
+            <option value="3">Up to 100 plus 1 - 100</option>
+            <option value="4">To 1000 plus any numbers</option>
+            <option value="5">To 10000 plus any numbers</option>
+            <option value="6">To 1000000 plus any numbers</option>
+        </select>
+        <select name="Addition with decimal point" id="addition-decimal-point">
+            <option value="0">Addition with decimal point</option>
+            <option value="1">From 1 - 100 plus 1,x - 10,x</option>
+            <option value="2">From 1 - 100 plus 1,xx - 10,xx</option>
+            <option value="3">From 1,x - 100,x plus 1,x - 10,x</option>
+            <option value="4">From 1,xx - 100,xx plus 1,xx - 10,xx</option>
+            <option value="5">From 1 - 1000 plus same with up to ,xxx</option>
+            <option value="6">From 1 - 10000 plus same with up to ,xxxx</option>
+        </select>
+        <select name="Select nuber of examples" id="">
+            <option value="0">Select nuber of examples</option>
+            <option value="1">10 in 3 columns</option>
+            <option value="2">15 in 3 columns</option>
+            <option value="3">20 in 3 columns</option>
+            <option value="4">25 in 3 columns</option>
+            <option value="5">30 in 3 columns</option>
+            <option value="6">40 in 3 columns</option>
+            <option value="7">Online exercise</option>
+        </select>
+    </form>
+</body>
+
+<footer>
+    <div class="controllers">
+        <button id="math-start-exercise" type="button"><strong> Start</strong></button>
+    </div>
+</footer>
+
+<section id="app"></section>
+
+<script src="../scripts/math-generator/math-generator.js"></script>
+
+</html>

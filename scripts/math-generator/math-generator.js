@@ -1,9 +1,30 @@
-const buttonStart = document.getElementById("math-start-exercise")
-const application = document.getElementById("app")
+// const buttonStart = document.getElementById("math-start-exercise")
+// const application = document.getElementById("app")
 
-buttonStart.addEventListener('click', () => {
-    application.innerHTML = randomMathExample()
-})
+// buttonStart.addEventListener('click', () => {
+//    application.innerHTML = randomMathExample()
+// })
+
+const examplesOption = document.getElementById("examples");
+const examplesValue = examplesOption.options[examplesOption.selectedIndex].value;
+
+const smallMultiplicationOption = document.getElementById("small-multiplication");
+const smallMultiplicationValue = smallMultiplicationOption.options[smallMultiplicationOption.selectedIndex].value;
+
+const bigMultiplicationOption = document.getElementById("big-multiplication");
+const bigMultiplicationValue = bigMultiplicationOption.options[bigMultiplicationOption.selectedIndex].value;
+
+const multiplicationDecimalPointOption = document.getElementById("multiplication-decimal-point");
+const multiplicationDecimalPointValue = multiplicationDecimalPointOption.options[multiplicationDecimalPointOption.selectedIndex].value;
+
+const additionHundretOption = document.getElementById("addition-hundret");
+const additionHundretValue = additionHundretOption.options[additionHundretOption.selectedIndex].value;
+
+const additionUpToHundretOption = document.getElementById("addition-up-to-hundret");
+const additionUpToHundretValue = additionUpToHundretOption.options[additionUpToHundretOption.selectedIndex].value;
+
+const additionDecimalPointOption = document.getElementById("addition-decimal-point");
+const additionDecimalPointValue = additionDecimalPointOption.options[additionDecimalPointOption.selectedIndex].value;
 
 function randomNumber(max) {
     return Math.floor(Math.random() * max) + 1;

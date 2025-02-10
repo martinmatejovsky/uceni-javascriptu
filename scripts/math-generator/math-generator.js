@@ -1,9 +1,9 @@
-// const buttonStart = document.getElementById("math-start-exercise")
-// const application = document.getElementById("app")
+const buttonStart = document.getElementById("math-start-exercise")
+const application = document.getElementById("app")
 
-// buttonStart.addEventListener('click', () => {
-//    application.innerHTML = randomMathExample()
-// })
+buttonStart.addEventListener('click', () => {
+    application.innerHTML = randomMathExample()
+ })
 
 const examplesOption = document.getElementById("examples");
 const examplesValue = examplesOption.options[examplesOption.selectedIndex].value;
@@ -26,14 +26,30 @@ const additionUpToHundretValue = additionUpToHundretOption.options[additionUpToH
 const additionDecimalPointOption = document.getElementById("addition-decimal-point");
 const additionDecimalPointValue = additionDecimalPointOption.options[additionDecimalPointOption.selectedIndex].value;
 
-function randomNumber(max) {
-    return Math.floor(Math.random() * max) + 1;
+let firstGeneratednumberRange;
+let secondGeneratedNumberRange;
+
+if (smallMultiplicationValue != 0){
+    firstGeneratednumberRange = 11;
+    if (smallMultiplicationValue == 11){
+        secondGeneratedNumberRange = 6;
+    } else if (smallMultiplicationValue == 12){
+        secondGeneratedNumberRange = 5;
+    } else if (smallMultiplicationValue == 13){
+        secondGeneratedNumberRange = 11;
+    } else {
+        secondGeneratedNumberRange = smallMultiplicationValue;
+    }
 }
 
-function addiction() {
-    let firstAddictionNumber = randomNumber(10);
-    let secondAddictionNumber = randomNumber(10);
-    return (firstAddictionNumber + " + " + secondAddictionNumber);
+function randomNumber(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function addition(firstGeneratednumberRange, secondGeneratedNumberRange) {
+    let firstAdditionNumber = randomNumber(firstGeneratednumberRange);
+    let secondAdditionNumber = randomNumber(secondGeneratedNumberRange);
+    return (firstAdditionNumber + " + " + secondAdditionNumber);
 }
 
 function substraction() {
@@ -57,7 +73,7 @@ function division() {
     let thirdDivisionNumber = firstDivisionNumber * secondDivisionNumber;
     return (thirdDivisionNumber + " / " + firstDivisionNumber);
 }
-/*
+
 function randomMathExample() {
 
     let mathSign = randomNumber(3);
@@ -79,4 +95,3 @@ function randomMathExample() {
         }
     }
 }
-*/

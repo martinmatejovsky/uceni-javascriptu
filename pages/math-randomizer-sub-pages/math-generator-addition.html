@@ -9,16 +9,16 @@
 <body>
     <h2>Please select only one from the math options and number of examples. Than click on start button.</h2>
     <form action="">
-        <select name="Addition to 100" id="addition-hundret">
+        <select name="Addition to 100" class="selectedOptions" id="example-type">
             <option value="0">Addition to 100</option>
-            <option value="1">To 10 plus 1</option>
-            <option value="2">To 10 plus 2</option>
-            <option value="3">To 10</option>
-            <option value="4">To 100 plus 0 - 10</option>
-            <option value="5">To 100 plus tens</option>
-            <option value="6">To 100 plus any numbers</option>
+            <option value="1" data-range='{"firstNumber":[0,10],"secondNumber":[1,1],"decimalPoint":0,"operand":0}'>To 10 plus 1</option>
+            <option value="2" data-range='{"firstNumber":[0,9],"secondNumber":[2,2],"decimalPoint":0,"operand":0}'>To 10 plus 2</option>
+            <option value="3" data-range='{"firstNumber":[0,11],"secondNumber":[0,11],"decimalPoint":0,"operand":0}'>To 20 plus 0 - 10</option>
+            <option value="4" data-range='{"firstNumber":[0,9],"secondNumber":[1,1],"decimalPoint":0,"operand":0}'>To 100 plus 0 - 10</option>
+            <option value="5" data-range='{"firstNumber":[0,9],"secondNumber":[1,1],"decimalPoint":0,"operand":0}'>To 100 plus tens</option>
+            <option value="6" data-range='{"firstNumber":[0,9],"secondNumber":[1,1],"decimalPoint":0,"operand":0}'>To 100 plus any numbers</option>
         </select>
-        <select name="Addition up to 100" id="addition-up-to-hundret">
+        <select name="Addition up to 100" class="selectedOptions" id="addition-up-to-hundret">
             <option value="0">Addition up to 100</option>
             <option value="1">Up to 100 plus 0 - 10</option>
             <option value="2">Up to 100 plus tens</option>
@@ -27,7 +27,7 @@
             <option value="5">To 10000 plus any numbers</option>
             <option value="6">To 1000000 plus any numbers</option>
         </select>
-        <select name="Addition with decimal point" id="addition-decimal-point">
+<select name="Addition with decimal point" class="selectedOptions" id="addition-decimal-point">
             <option value="0">Addition with decimal point</option>
             <option value="1">From 0 - 100 plus 0,x - 10,x</option>
             <option value="2">From 0 - 100 plus 0,xx - 10,xx</option>
@@ -46,17 +46,19 @@
             <option value="6">40 in 3 columns</option>
             <option value="7">Online exercise</option>
         </select>
+        <button type="submit" value="Start" id="Start"></button>
     </form>
 </body>
 
-<footer>
+<!--<footer>
     <div class="controllers">
-        <button id="math-start-exercise" type="button"><strong> Start</strong></button>
+       <button id="math-start-exercise" type="button"><strong> Start</strong></button>
     </div>
 </footer>
+-->
 
 <section id="app"></section>
 
-<script src="../scripts/math-generator/math-generator.js"></script>
+<script src="../../scripts/math-generator/math-generator.js"></script>
 
 </html>

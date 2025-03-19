@@ -9,6 +9,8 @@ let secondNumberToCountRange;
 let multipleFirstNum;
 let multipleSecondNum;
 let operand;
+let roundOne
+let roundTwo
 
 //let availableOperands = ["+","-","*","/"]
 
@@ -33,22 +35,28 @@ function fillData() {
     multipleFirstNum = dataParsed.multipleFirstNum;
     multipleSecondNum = dataParsed.multipleSecondNum;
     operand = dataParsed.operand;
+    roundOne = dataParsed.roundOne
+    roundTwo = dataParsed.roundTwo
 }
 
 function writeExercices() {
 //    let selectedOperand = availableOperands[operand]
 
-    let firstNumber = randomIntFromInterval(firstNumberToCountRange[0], firstNumberToCountRange[1])
-    let secondNumber = randomIntFromInterval(secondNumberToCountRange[0], secondNumberToCountRange[1])
+    let firstNumber = randomIntFromInterval(firstNumberToCountRange[0], firstNumberToCountRange[1]) * multipleFirstNum
+    let secondNumber = randomIntFromInterval(secondNumberToCountRange[0], secondNumberToCountRange[1]) * multipleSecondNum
+    firstNumber = firstNumber.toFixed(roundOne)
+    console.log(firstNumber)
+    secondNumber = secondNumber.toFixed(roundTwo)
+    console.log(secondNumber)
 
     if (operand == 0){                                                                           //addiction
-        return ((firstNumber * multipleFirstNum) + " + " + (secondNumber * multipleSecondNum))
+        return (firstNumber + " + " + secondNumber)
     } else if (operand == 1){                                                                    //Subtraction
-        return ((firstNumber * multipleFirstNum) + " - " + (secondNumber * multipleSecondNum))
+        return (firstNumber + " - " + secondNumber)
     } else if (operand == 2){                                                                    //Multiplication
-        return ((firstNumber * multipleFirstNum) + " * " + (secondNumber * multipleSecondNum))
+        return (firstNumber + " * " + secondNumber)
     } else if (operand == 3){                                                                    //Division
-        return ((firstNumber * multipleFirstNum) + " / " + (secondNumber * multipleSecondNum))
+        return (firstNumber + " / " + secondNumber)
     }
 }
 

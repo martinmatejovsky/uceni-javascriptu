@@ -52,7 +52,7 @@ nav ul li a:hover {
 }
 */
 button {
-    padding: 8px 25px;
+    padding: 17px 60px;
     background-color: #b0b7d3;
     font-size: 25px;
     font-family: serif;
@@ -61,7 +61,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 button:hover {

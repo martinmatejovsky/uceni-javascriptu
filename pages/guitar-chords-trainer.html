@@ -6,42 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guitar chord trainer</title>
   <link rel="stylesheet" href="../css/general-style.css" />
-  <link rel="stylesheet" href="../css/Guitar-randomizer.css" />
+  <link rel="stylesheet" href="../css/guitar-chords-trainer.css" />
+  <title>Guitar chords training web!</title>
 </head>
 
 <body>
-  <header>
-    <h1>Guitar chords training web !</h1>
-  </header>
-
   <main class="text-normal">
-    <p id="defining-text">
+    <h1 class="text-head">Guitar chords trainer
+    </h1>
+    <h2 class="text-defining">
       Random chords will be displayed for limited time. Play them before
       they're gone. If you don't know how, wait for sollution ;)
-    </p>
+    </h2>
 
-    <div class="controllers">
-      <button id="guitar-start-excercise" type="button">Lets rock</button>
-    </div>
 
-    <section id="app"></section>
+    <button class="button button-start" title="Start the exercise" type="button">Let´s rock
+      !!!</button>
 
-    <p id="countdown-text">
-      <span id="countdown"></span>
+    <section class="app"></section>
+
+    <p class="countdown-text">
+      <span class="countdown"></span>
     </p>
 
     <div class="pictures">
-      <div id="pictureOfChord"></div>
+      <p id="pictureOfChord"></p>
     </div>
 
-    <div class="controllers">
-      <!-- spustí zobrazení následující sekce -->
-      <button id="buttonOfPlayedChords" type="button">
-        Show played chords
-      </button>
-    </div>
+    <button class="button button-show-chords" title="Show played chords" type="button">Show me played chords, please
+    </button>
 
-    <section id="playedChords"></section>
+    <section class="playedChords"></section>
   </main>
 
   <footer class="text-footer">

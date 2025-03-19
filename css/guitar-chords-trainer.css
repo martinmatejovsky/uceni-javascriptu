@@ -1,0 +1,108 @@
+html {
+  background-color: rgb(185, 192, 244);
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* LAYOUT */
+main {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* Tři stejné sloupce */
+  gap: 20px;
+
+}
+
+.text-normal {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+.text-head {
+  margin: 40px 0;
+  font-size: 50px;
+  color: #ac1773;
+  text-align: center;
+}
+
+.text-defining {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 30px;
+  height: 150px;
+}
+
+.text-footer {
+  font-size: 15px;
+}
+
+.pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures div {
+  margin: 20px 0;
+  color: #ffffff;
+  font-size: 90px;
+  font-weight: bold;
+  height: 400px;
+  width: 300px;
+}
+
+.button {
+  align-self: flex-start;
+  justify-content: flex-start;
+  font-weight: bold;
+  padding: 18px 36px;
+  font-size: 28px;
+  border: 0 none;
+  border-radius: 38px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #ac1773;
+  color: #000000;
+}
+
+
+.app {
+  display: flex;
+  float: center;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #ac1773;
+  font-size: 90px;
+  font-weight: bold;
+  height: 100px;
+}
+
+.countdown-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 25px;
+  height: 50px;
+}
+
+.hidden {
+  display: none;
+}

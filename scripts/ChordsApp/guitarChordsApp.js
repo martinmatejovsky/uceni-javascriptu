@@ -4,14 +4,14 @@ import chordsGuitarBasic from "../../data/chordsGuitar.js";
 import chordsGuitarAdds from "../../data/chordsGuitarAdds.js";
 
 //nastavení tlačíka start/stop
-const buttonStart = document.getElementById("guitar-start-excercise");
+const buttonStart = document.querySelector(".button-start");
 //nastavení prostoru (podle matesa) kde se bude vypisovat výsledek funkce ShowRandomResult, tedy náhodný akord
-const application = document.getElementById("app");
-const playedChords = document.getElementById("playedChords");
+const application = document.querySelector(".app");
+const playedChords = document.querySelector(".playedChords");
 const arrOfPlayedChords = []; // pole kam se ukládají zobrazené akordy
 const pictureOfChord = document.getElementById("pictureOfChord"); // pro zobrazení obrázku
-const buttonOfPlayedChords = document.getElementById("buttonOfPlayedChords");
-const countdown = document.getElementById("countdown");
+const buttonOfPlayedChords = document.querySelector(".button-show-chords");
+const countdown = document.querySelector(".countdown");
 //souhrrná funkce  na volání random hodnoty z pole
 
 const callRandomChord = function (arr) {
@@ -58,7 +58,7 @@ const startCountdownPictureDisplay = function (message) {
   countdownIntervalPictureDisplay = setInterval(() => {
     countdownNumber--;
     countdown.textContent = message + countdownNumber + " seconds !";
-
+    console.log("countdownIntervalPictureDisplay", countdownNumber);
     if (countdownNumber <= 0) {
       clearInterval(countdownIntervalPictureDisplay);
       countdownIntervalPictureDisplay = null;
@@ -70,21 +70,19 @@ let countdownIntervalPictureRemove;
 const startCountdownPictureRemove = function (message) {
   let countdownNumber = 5;
   if (countdown.textContent == "") {
-
-  }
-  else {
+  } else {
     countdown.textContent = message + countdownNumber + " seconds !";
 
     countdownIntervalPictureRemove = setInterval(() => {
       countdownNumber--;
       countdown.textContent = message + countdownNumber + " seconds !";
-
+      console.log("countdownIntervalPictureRemove", countdownNumber);
       if (countdownNumber <= 1) {
         clearInterval(countdownIntervalPictureRemove);
         countdownIntervalPictureRemove = null;
       }
     }, 1000);
-  };
+  }
 };
 
 //funkce na zastavení odpočítávání času
@@ -92,7 +90,6 @@ const countdownFunctionStop = function () {
   clearInterval(countdownIntervalPictureDisplay);
   clearInterval(countdownIntervalPictureRemove);
   countdown.textContent = "";
-
 };
 
 // opakování random funkce v časovém intervalu
@@ -130,25 +127,25 @@ const repeatFunction = function () {
 const stopRepeatFunction = function () {
   if (intervalID) {
     clearInterval(intervalID);
-    intervalID = undefined;
+    intervalID = null;
   }
   chordPicturePrint();
   countdownFunctionStop();
 };
 
 //změna funkce tlačítka guitar-sart-excercise - snaha o změnu po kliknutí - Start-Stop
-let clickStart = function () {
-  repeatFunction();
-  buttonStart.removeEventListener("click", clickStart);
-  buttonStart.textContent = "STOP the ROCK!!!";
-  buttonStart.addEventListener("click", clickStop);
-};
-
 let clickStop = function () {
   stopRepeatFunction();
   buttonStart.textContent = "Lets rock";
   buttonStart.removeEventListener("click", clickStop);
   buttonStart.addEventListener("click", clickStart);
+};
+
+let clickStart = function () {
+  repeatFunction();
+  buttonStart.removeEventListener("click", clickStart);
+  buttonStart.textContent = "STOP the ROCK!!!";
+  buttonStart.addEventListener("click", clickStop);
 };
 
 //přiřazení akce po kliknutí na tlačítko

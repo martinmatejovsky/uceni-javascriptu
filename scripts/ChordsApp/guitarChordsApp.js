@@ -49,7 +49,7 @@ const addResultToArr = function () {
   }
 };
 
-//funkce na odpočítávání času zobrazneí akordu
+//funkce na odpočítávání času zobrazení akordu
 let countdownIntervalPictureDisplay;
 const startCountdownPictureDisplay = function (message) {
   let countdownNumber = 5;
@@ -58,10 +58,9 @@ const startCountdownPictureDisplay = function (message) {
   countdownIntervalPictureDisplay = setInterval(() => {
     countdownNumber--;
     countdown.textContent = message + countdownNumber + " seconds !";
-    console.log("countdownIntervalPictureDisplay", countdownNumber);
     if (countdownNumber <= 0) {
       clearInterval(countdownIntervalPictureDisplay);
-      countdownIntervalPictureDisplay = null;
+
     }
   }, 1000);
 };
@@ -76,49 +75,48 @@ const startCountdownPictureRemove = function (message) {
     countdownIntervalPictureRemove = setInterval(() => {
       countdownNumber--;
       countdown.textContent = message + countdownNumber + " seconds !";
-      console.log("countdownIntervalPictureRemove", countdownNumber);
       if (countdownNumber <= 1) {
         clearInterval(countdownIntervalPictureRemove);
-        countdownIntervalPictureRemove = null;
+
       }
     }, 1000);
   }
 };
 
-//funkce na zastavení odpočítávání času
+//funkce na zastavení odpočítávání času zobrazení akordu
 const countdownFunctionStop = function () {
   clearInterval(countdownIntervalPictureDisplay);
   clearInterval(countdownIntervalPictureRemove);
   countdown.textContent = "";
 };
 
+//funkce na zobrazení odpočítávání a zobrazení a mazání obrázku akordu
+let timeoutID1;
+let timeoutID2;
+const countdownFunction = function () {
+  startCountdownPictureDisplay("Picture will be displayed in ");
+  timeoutID1 = setTimeout(() => {
+    //spustení funkce  5 sekund po funkci showrandomresult
+    startCountdownPictureRemove("Picture will dissapear in ");
+  }, 5000);
+  timeoutID2 = setTimeout(() => {
+    //spustení funkce print 5 sekund po funkci showrandomresult
+    chordPicturePrint();
+  }, 5000);
+}
 // opakování random funkce v časovém intervalu
+
 let intervalID;
 const repeatFunction = function () {
   showRandomResult();
   addResultToArr();
-  startCountdownPictureDisplay("Picture will be displayed in ");
-  setTimeout(() => {
-    //spustení funkce  5 sekund po funkci showrandomresult
-    startCountdownPictureRemove("Picture will dissapear in ");
-  }, 5000);
-  setTimeout(() => {
-    chordPicturePrint();
-  }, 5000);
+  countdownFunction();
 
   if (!intervalID) {
     intervalID = setInterval(() => {
       showRandomResult();
       addResultToArr();
-      startCountdownPictureDisplay("Picture will be displayed in ");
-      setTimeout(() => {
-        //spustení funkce  5 sekund po funkci showrandomresult
-        startCountdownPictureRemove("Picture will dissapear in ");
-      }, 5000);
-      setTimeout(() => {
-        //spustení funkce print 5 sekund po funkci showrandomresult
-        chordPicturePrint();
-      }, 5000);
+      countdownFunction();
     }, 10000);
   }
 };
@@ -129,6 +127,10 @@ const stopRepeatFunction = function () {
     clearInterval(intervalID);
     intervalID = null;
   }
+  clearTimeout(timeoutID1);
+  timeoutID1 = null;
+  clearTimeout(timeoutID2);
+  timeoutID2 = null;
   chordPicturePrint();
   countdownFunctionStop();
 };

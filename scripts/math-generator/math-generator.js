@@ -11,6 +11,7 @@ let multipleSecondNum;
 let operand;
 let roundOne
 let roundTwo
+let devision
 
 function randomIntFromInterval(min, max) {                                                      // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -50,8 +51,10 @@ function writeExercices() {
         return (firstNumber + " - " + secondNumber)
     } else if (operand == 2){                                                                    //Multiplication
         return (firstNumber + " * " + secondNumber)
-    } else if (operand == 3){                                                                    //Division
-        return (firstNumber + " / " + secondNumber)
+    } else if (operand == 3){ 
+        devision = firstNumber * secondNumber                                                    //Division
+        devision = devision.toFixed(roundTwo*2)
+        return (devision + " / " + secondNumber)
     }
 }
 

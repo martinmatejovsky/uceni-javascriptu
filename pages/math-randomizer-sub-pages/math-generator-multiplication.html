@@ -9,43 +9,43 @@
 <body>
     <h2>Please select only one from the math options and number of examples. Than click on start button.</h2>
     <form action="" id="StartMath">
-        <select name="Small multiplication" id="small-multiplication">
+        <select name="Small multiplication" class="selectedOptions" id="small-multiplication">
             <option value="0">Small multiplication</option>
-            <option value="1">From 0 - 10 by 1</option>
-            <option value="2">From 0 - 10 by 2</option>
-            <option value="3">From 0 - 10 by 3</option>
-            <option value="4">From 0 - 10 by 4</option>
-            <option value="5">From 0 - 10 by 5</option>
-            <option value="6">From 0 - 10 by 6</option>
-            <option value="7">From 0 - 10 by 7</option>
-            <option value="8">From 0 - 10 by 8</option>
-            <option value="9">From 0 - 10 by 9</option>
-            <option value="10">From 0 - 10 by 10</option>
-            <option value="11">From 0 - 10 by 0 - 5</option>
-            <option value="12">From 0 - 10 by 6 - 10</option>
-            <option value="13">From 0 - 10 by 0 - 10</option>
+            <option value="1" data-range='{"firstNumber":[0,10],"secondNumber":[1,1],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 1</option>
+            <option value="2" data-range='{"firstNumber":[0,10],"secondNumber":[2,2],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 2</option>
+            <option value="3" data-range='{"firstNumber":[0,10],"secondNumber":[3,3],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 3</option>
+            <option value="4" data-range='{"firstNumber":[0,10],"secondNumber":[4,4],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 4</option>
+            <option value="5" data-range='{"firstNumber":[0,10],"secondNumber":[5,5],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 5</option>
+            <option value="6" data-range='{"firstNumber":[0,10],"secondNumber":[6,6],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 6</option>
+            <option value="7" data-range='{"firstNumber":[0,10],"secondNumber":[7,7],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 7</option>
+            <option value="8" data-range='{"firstNumber":[0,10],"secondNumber":[8,8],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 8</option>
+            <option value="9" data-range='{"firstNumber":[0,10],"secondNumber":[9,9],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 9</option>
+            <option value="10" data-range='{"firstNumber":[0,10],"secondNumber":[10,10],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 10</option>
+            <option value="11" data-range='{"firstNumber":[0,10],"secondNumber":[0,5],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 0 - 5</option>
+            <option value="12" data-range='{"firstNumber":[0,10],"secondNumber":[6,10],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 6 - 10</option>
+            <option value="13" data-range='{"firstNumber":[0,10],"secondNumber":[0,10],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 10 by 0 - 10</option>
         </select>
-        <select name="Big multiplication" id="big-multiplication">
+        <select name="Big multiplication" class="selectedOptions" id="big-multiplication">
             <option value="0">Big multiplication</option>
-            <option value="1">From 10 - 100 by 0 - 10</option>
-            <option value="2">From 10 - 100 by 10 - 100</option>
-            <option value="3">From 10 - 1000 by 0 - 10</option>
-            <option value="4">From 10 - 1000 by 10 - 100</option>
-            <option value="5">From 10 - 1000 by 10 - 1000</option>
-            <option value="6">From 0 - 1000 by 0 - 1000</option>
+            <option value="1" data-range='{"firstNumber":[10,100],"secondNumber":[0,10],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 10 - 100 by 0 - 10</option>
+            <option value="2" data-range='{"firstNumber":[10,100],"secondNumber":[10,100],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 10 - 100 by 10 - 100</option>
+            <option value="3" data-range='{"firstNumber":[100,1000],"secondNumber":[0,10],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 100 - 1000 by 0 - 10</option>
+            <option value="4" data-range='{"firstNumber":[100,1000],"secondNumber":[10,100],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 100 - 1000 by 10 - 100</option>
+            <option value="5" data-range='{"firstNumber":[100,1000],"secondNumber":[100,1000],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 100 - 1000 by 100 - 1000</option>
+            <option value="6" data-range='{"firstNumber":[0,1000],"secondNumber":[0,1000],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":1,"roundTwo":0,"operand":2}'>From 0 - 1000 by 0 - 1000</option>
         </select>
-        <select name="Multiplication with decimal point" id="multiplication-decimal-point">
+        <select name="Multiplication with decimal point" class="selectedOptions" id="multiplication-decimal-point">
             <option value="0">Multiplication with decimal point</option>
-            <option value="1">From 0 - 100 by 0,x - 10,x</option>
-            <option value="2">From 0 - 100 by 0,xx - 10,xx</option>
-            <option value="3">From 0,x - 100,x by 0,x - 10,x</option>
-            <option value="4">From 0,xx - 100,xx by 0,xx - 10,xx</option>
-            <option value="5">From 10 - 100 by 10,x - 100,x</option>
-            <option value="6">From 10 - 100 by 10,xx - 100,xx</option>
-            <option value="7">From 10,x - 100,x by 10,x - 100,x</option>
-            <option value="8">From 10,xx - 100,xx by 10,xx - 100,xx</option>
+            <option value="1" data-range='{"firstNumber":[0,10],"secondNumber":[0,100],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":0.1,"roundTwo":1,"operand":2}'>From 0 - 10 by 0,x - 10,x</option>
+            <option value="2" data-range='{"firstNumber":[10,100],"secondNumber":[0,1000],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":0.01,"roundTwo":2,"operand":2}'>From 10 - 100 by 0,xx - 10,xx</option>
+            <option value="3" data-range='{"firstNumber":[0,100],"secondNumber":[0,100],"multipleFirstNum":0.1,"roundOne":1,"multipleSecondNum":0.1,"roundTwo":1,"operand":2}'>From 0,x - 10,x by 0,x - 10,x</option>
+            <option value="4" data-range='{"firstNumber":[0,1000],"secondNumber":[0,10000],"multipleFirstNum":0.01,"roundOne":2,"multipleSecondNum":0.01,"roundTwo":2,"operand":2}'>From 0,xx - 10,xx by 0,xx - 10,xx</option>
+            <option value="5" data-range='{"firstNumber":[10,100],"secondNumber":[100,1000],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":0.1,"roundTwo":1,"operand":2}'>From 10 - 100 by 10,x - 100,x</option>
+            <option value="6" data-range='{"firstNumber":[10,100],"secondNumber":[1000,10000],"multipleFirstNum":1,"roundOne":0,"multipleSecondNum":0.01,"roundTwo":2,"operand":2}'>From 10 - 100 by 10,xx - 100,xx</option>
+            <option value="7" data-range='{"firstNumber":[100,1000],"secondNumber":[1000,1000],"multipleFirstNum":0.1,"roundOne":1,"multipleSecondNum":0.1,"roundTwo":1,"operand":2}'>From 10,x - 100,x by 10,x - 100,x</option>
+            <option value="8" data-range='{"firstNumber":[1000,10000],"secondNumber":[10000,10000],"multipleFirstNum":0.01,"roundOne":2,"multipleSecondNum":0.01,"roundTwo":2,"operand":2}'>From 10,xx - 100,xx by 10,xx - 100,xx</option>
         </select>
-        <select name="Select nuber of examples" id="examples">
+<!--        <select name="Select nuber of examples" id="examples">
             <option value="0">Select nuber of examples</option>
             <option value="1">10 in 3 columns</option>
             <option value="2">15 in 3 columns</option>
@@ -55,16 +55,10 @@
             <option value="6">40 in 3 columns</option>
             <option value="7">Online exercise</option>
         </select>
-        <input type="submit" value="Start">
+-->
+        <br><br><button type="submit" value="Start" id="Start">Start</button>
     </form>
 </body>
-
-<footer>
-    <div class="controllers">
-        <button id="math-start-exercise" type="button"><strong> Start</strong></button>
-    </div>
-</footer>
-
 <section id="app"></section>
 
 <script src="../../scripts/math-generator/math-generator.js"></script>

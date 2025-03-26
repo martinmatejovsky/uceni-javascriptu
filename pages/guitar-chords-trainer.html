@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guitar chord trainer</title>
+    <!-- <link rel="stylesheet" href="../css/general-style.css" /> -->
+    <link rel="stylesheet" href="../scss/guitar-chords-trainer.scss" />
+    <title>Guitar chords training web!</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guitar chord trainer</title>
-  <link rel="stylesheet" href="../css/general-style.css" />
-  <link rel="stylesheet" href="../css/guitar-chords-trainer.css" />
-  <title>Guitar chords training web!</title>
-</head>
+  <body>
+    <main class="text-normal">
+      <h1 class="text-head">Guitar chords trainer</h1>
+      <h2 class="text-defining">
+        Random chords will be displayed for limited time. Play them before
+        they're gone. If you don't know how, wait for sollution ;)
+      </h2>
 
-<body>
-  <main class="text-normal">
-    <h1 class="text-head">Guitar chords trainer
-    </h1>
-    <h2 class="text-defining">
-      Random chords will be displayed for limited time. Play them before
-      they're gone. If you don't know how, wait for sollution ;)
-    </h2>
+      <button
+        class="button button-start"
+        title="Start the exercise"
+        type="button"
+      >
+        Let´s rock !!!
+      </button>
 
+      <section class="app"></section>
 
-    <button class="button button-start" title="Start the exercise" type="button">Let´s rock
-      !!!</button>
+      <p class="countdown-text">
+        <span class="countdown"></span>
+      </p>
 
-    <section class="app"></section>
+      <div class="pictures">
+        <p id="pictureOfChord"></p>
+      </div>
 
-    <p class="countdown-text">
-      <span class="countdown"></span>
-    </p>
+      <button
+        class="button button-show-chords"
+        title="Show played chords"
+        type="button"
+      >
+        Show me played chords, please
+      </button>
 
-    <div class="pictures">
-      <p id="pictureOfChord"></p>
-    </div>
+      <section class="playedChords"></section>
+    </main>
 
-    <button class="button button-show-chords" title="Show played chords" type="button">Show me played chords, please
-    </button>
+    <footer class="text-footer">
+      <p>Created by Foldas, all rights reserved.</p>
+    </footer>
 
-    <section class="playedChords"></section>
-  </main>
-
-  <footer class="text-footer">
-    <p>
-      Created by Foldas, all rights reserved.
-    </p>
-  </footer>
-
-  <script src="../scripts/ChordsApp/guitarChordsApp.js" type="module"></script>
-</body>
-
+    <script
+      src="../scripts/ChordsApp/guitarChordsApp.js"
+      type="module"
+    ></script>
+  </body>
 </html>

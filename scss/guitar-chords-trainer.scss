@@ -1,0 +1,118 @@
+html {
+  background-color: rgb(185, 192, 244);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* LAYOUT */
+main {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* Tři stejné sloupce */
+  gap: 20px;
+}
+
+.text-normal {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+.text-head {
+  margin: 40px 0;
+  font-size: 80px;
+  color: #ac1773;
+  text-align: center;
+}
+
+.text-defining {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 30px;
+  height: 50px;
+}
+
+.text-footer {
+  font-size: 15px;
+}
+
+.pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures p {
+  margin: 20px 0;
+  height: 500px;
+  width: 400px;
+}
+
+.pictures img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button {
+  margin: 20px;
+  font-weight: bold;
+  padding: 18px 36px;
+  font-size: 28px;
+  border: 2px solid #000000;
+  border-radius: 38px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #ac1773;
+  color: #000000;
+}
+
+.button:hover {
+  color: #ac1773;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  color: #ac1773;
+  font-size: 90px;
+  font-weight: bold;
+  height: 100px;
+}
+
+.countdown-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 25px;
+  height: 50px;
+}
+
+.playedChords {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}

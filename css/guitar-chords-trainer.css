@@ -75,14 +75,12 @@ main {
   font-size: 28px;
   border: 2px solid #000000;
   border-radius: 38px;
-  cursor: pointer;
-  transition: background-color 0.3s;
   background-color: #ac1773;
   color: #000000;
 }
 
 .button:hover {
-  color: #ac1773;
+  background-color: #000000;
 }
 
 .app {

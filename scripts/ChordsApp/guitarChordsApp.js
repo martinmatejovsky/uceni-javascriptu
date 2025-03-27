@@ -91,15 +91,15 @@ const countdownFunctionStop = function () {
 };
 
 //funkce na zobrazení odpočítávání a zobrazení a mazání obrázku akordu
-let timeoutID1;
-let timeoutID2;
+let timeoutIDDisplay;
+let timeoutIDDissapear;
 const countdownFunction = function () {
   startCountdownPictureDisplay("Picture will be displayed in ");
-  timeoutID1 = setTimeout(() => {
+  timeoutIDDisplay = setTimeout(() => {
     //spustení funkce  5 sekund po funkci showrandomresult
     startCountdownPictureRemove("Picture will dissapear in ");
   }, 5000);
-  timeoutID2 = setTimeout(() => {
+  timeoutIDDissapear = setTimeout(() => {
     //spustení funkce print 5 sekund po funkci showrandomresult
     chordPicturePrint();
   }, 5000);
@@ -127,10 +127,10 @@ const stopRepeatFunction = function () {
     clearInterval(intervalID);
     intervalID = null;
   }
-  clearTimeout(timeoutID1);
-  timeoutID1 = null;
-  clearTimeout(timeoutID2);
-  timeoutID2 = null;
+  clearTimeout(timeoutIDDisplay);
+  timeoutIDDisplay = null;
+  clearTimeout(timeoutIDDissapear);
+  timeoutIDDissapear = null;
   chordPicturePrint();
   countdownFunctionStop();
 };

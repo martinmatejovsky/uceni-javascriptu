@@ -52,16 +52,20 @@ nav ul li a:hover {
 }
 */
 button {
-    padding: 17px 60px;
+    display: block;
     background-color: #b0b7d3;
     font-size: 25px;
     font-family: serif;
     color: #16083d;
-    border: 0 none;
-    border-radius: 8px;
+    border: 30px ;
+    width: 40px;
+    margin: 20px auto;
+    padding: 19px 40px;
+    border-radius: 38px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 5px;
+    margin-top: 55px;
+    box-sizing: content-box;
 }
 
 button:hover {

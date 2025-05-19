@@ -1,32 +1,66 @@
-const buttonStart = document.getElementById("math-start-exercise")
-const application = document.getElementById("app")
+const buttonStart = document.getElementById("Start");
+const application = document.getElementById("app");
 
-buttonStart.addEventListener('click', () => {
-    application.innerHTML = randomMathExample()
-})
+let dataSet;
+let dataRange;
+let dataParsed;
+let firstNumberToCountRange;
+let secondNumberToCountRange;
+let multipleFirstNum;
+let multipleSecondNum;
+let operand;
+let roundOne
+let roundTwo
+let devision
 
-function randomNumber(max) {
-    return Math.floor(Math.random() * max) + 1;
+function randomIntFromInterval(min, max) {                                                      // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function randomMathExample() {
-
-    let mathSign = randomNumber(3);
+function fillData() {
+    let selectedTag = document.getElementsByClassName("selectedOptions");                       //load all class="selectedOptions" to later check
     
-    if (mathSign == 3){
-        let firstMultipleNumber = randomNumber(10);
-        let secondMultipleNumber = randomNumber(10);
-        return (firstMultipleNumber + " * " + secondMultipleNumber);
-    } else {
-        let firstNumber = randomNumber(100);
-        let secondNumber = randomNumber(100);
-        if (mathSign == 1){
-            return (firstNumber + " + " + secondNumber);
-        } else {
-            if (firstNumber < secondNumber){
-            secondNumber = firstNumber;
-            }
-        return (firstNumber + " - " + secondNumber);
+    for (let i = 0; i < selectedTag.length; i++){
+        if (selectedTag[i].value != "0") {                                                      //check if selected value is != 0. it means that some option was selected
+            const selectedOption = selectedTag[i].options[selectedTag[i].selectedIndex];        //found option with the same value like was selected
+            const dataRange = selectedOption.getAttribute('data-range');                        //load data from data-range as string
+            dataParsed = JSON.parse(dataRange);                                                 //change string to objet
+            console.log(dataParsed);
         }
     }
+
+    firstNumberToCountRange = dataParsed.firstNumber;
+    secondNumberToCountRange = dataParsed.secondNumber;
+    multipleFirstNum = dataParsed.multipleFirstNum;
+    multipleSecondNum = dataParsed.multipleSecondNum;
+    operand = dataParsed.operand;
+    roundOne = dataParsed.roundOne
+    roundTwo = dataParsed.roundTwo
 }
+
+function writeExercices() {
+
+    let firstNumber = randomIntFromInterval(firstNumberToCountRange[0], firstNumberToCountRange[1]) * multipleFirstNum
+    let secondNumber = randomIntFromInterval(secondNumberToCountRange[0], secondNumberToCountRange[1]) * multipleSecondNum
+    firstNumber = firstNumber.toFixed(roundOne)
+    secondNumber = secondNumber.toFixed(roundTwo)
+
+    if (operand == 0){                                                                           //addiction
+        return (firstNumber + " + " + secondNumber)
+    } else if (operand == 1){                                                                    //Subtraction
+        return (firstNumber + " - " + secondNumber)
+    } else if (operand == 2){                                                                    //Multiplication
+        return (firstNumber + " * " + secondNumber)
+    } else if (operand == 3){ 
+        devision = firstNumber * secondNumber                                                    //Division
+        devision = devision.toFixed(roundTwo*2)
+        return (devision + " / " + secondNumber)
+    }
+}
+
+buttonStart.addEventListener("click", function(event) {
+    event.preventDefault();                                                                      //prevent to reset page to default state. All JS action will just flash on the page
+    
+    fillData(event);
+    application.innerHTML = writeExercices();
+});
